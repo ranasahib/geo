@@ -1,0 +1,8 @@
+zuul:
+  routes:
+    wfs:
+      path: /wfs/**
+      url: http://localhost:8080/geoserver
+    wms:
+      path: /wmsservice/**
+      url: http://localhost:8080/geoserver

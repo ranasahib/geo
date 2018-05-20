@@ -1,0 +1,18 @@
+/* HTML4 defaults (re-declare after CSS reset; see <http://www.w3.org/TR/CSS21/sample.html>) */
+
+h1 { font-size: 2em; margin: 0px; }
+h2 { font-size: 1.5em; margin: 0px; }
+h3 { font-size: 1.17em; margin: 0px; }
+h1, h2, h3, h4, h5, h6, b, strong { font-weight: bold; }
+table { display: table; }
+tr { display: table-row; }
+thead { display: table-header-group; }
+tbody { display: table-row-group; }
+tfoot { display: table-footer-group; }
+col { display: table-column; }
+colgroup { display: table-column-group; }
+td, th { display: table-cell; }
+th { font-weight: bolder; text-align: center; }
+table { border-spacing: 2px; }
+thead, tbody, tfoot { vertical-align: middle; }
+td, th, tr { vertical-align: inherit; }

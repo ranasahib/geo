@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8" />
+   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Geo</title>
+   <link type="image/x-icon" rel="icon" href="images/favicon.ico" />
+  
+   <link data-require="bootstrap@3.3.6" data-semver="3.3.6" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
+    
+   <link type="text/css" rel="stylesheet" href="css/lib/bootstrap-toggle-2.0.0.min.css" />
+   <link type="text/css" rel="stylesheet" href="css/client.css" />
+   <link rel="stylesheet" type="text/css" href="css/lib/jquery-ui-1.11.1.custom.min.css"></link>
+   <link rel="stylesheet" type="text/css" href="css/notification.css"></link>
+   <!-- <link rel="stylesheet" href="https://openlayers.org/en/v4.2.0/css/ol.css" type="text/css"></link> -->
+   
+   <link rel="stylesheet" type="text/css" href="css/lib/bootstrap-3.2.0.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/client.query.builder.css" />
+	<link rel="stylesheet" type="text/css" href="css/client.tree.css" />
+	<link rel="stylesheet" href="https://openlayers.org/en/v4.4.1/css/ol.css" type="text/css" />
+	<link rel="stylesheet" href="css/split-pane.css" />
+    <style>
+      .map:-moz-full-screen {
+        height: 100%;
+      }
+      .map:-webkit-full-screen {
+        height: 100%;
+      }
+      .map:-ms-fullscreen {
+        height: 100%;
+      }
+      .map:fullscreen {
+        height: 100%;
+      }
+      .ol-rotate {
+        top: 3em;
+      }
+      .ol-popup {
+        position: absolute;
+        background-color: white;
+        -webkit-filter: drop-shadow(0 1px 4px rgba(0,0,0,0.2));
+        filter: drop-shadow(0 1px 4px rgba(0,0,0,0.2));
+        padding: 15px;
+        border-radius: 10px;
+        border: 1px solid #cccccc;
+        bottom: 12px;
+        left: -50px;
+        min-width: 280px;
+      }
+      .ol-popup:after, .ol-popup:before {
+        top: 100%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+      }
+      .ol-popup:after {
+        border-top-color: white;
+        border-width: 10px;
+        left: 48px;
+        margin-left: -10px;
+      }
+      .ol-popup:before {
+        border-top-color: #cccccc;
+        border-width: 11px;
+        left: 48px;
+        margin-left: -11px;
+      }
+      .ol-popup-closer {
+        text-decoration: none;
+        position: absolute;
+        top: 2px;
+        right: 8px;
+      }
+      .ol-popup-closer:after {
+        content: "✖";
+      }
+     .satelite {
+        top: 65px;
+        left: .5em;
+      }
+      .ol-touch .satelite  {
+        top: 80px;
+      }
+    </style>
+   
+</head>
+<body ng-app="routerApp">
+    <ui-view></ui-view>
+</body>
+<script type="text/javascript" src="js/lib/jquery.min.js"></script>
+<script type="text/javascript" src="js/lib/bootstrap-3.2.0.min.js"></script>
+<script type="text/javascript" src="js/lib/bootstrap-toggle-2.0.0.min.js"></script>
+<script type="text/javascript" src="js/lib/bootstrap-typeahead-3.0.3.min.js"></script>
+
+<script data-require="angular.js@1.4.5" data-semver="1.4.5"
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+<script src="angular-ui-router.min.js"></script>
+<script src="js/lib/angular-ui-notification.js"></script>
+
+
+<script src="js/split-pane.js"></script>
+<script src="js/angular-split-pane.js"></script>
+
+<script src="app.js"></script>
+<script src="js/client.query.builder.js"></script>
+
+<script type="text/javascript" src="js/lib/jquery.StickyTabs.js"></script>
+<script	src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
+<!-- <script src="https://openlayers.org/en/v4.2.0/build/ol.js"></script> -->
+<script type="text/javascript" src="js/lib/openlayers-2.13.1.min.js"></script>
+<script type="text/javascript" src="js/lib/galdos.openlayers.extensions.js"></script>
+<script type="text/javascript" src="js/lib/d3-3.5.5.min.js"></script>
+<script type="text/javascript" src="https://codepb.github.io/jquery-template/jquery.loadTemplate-0.4.3.js"></script>
+<script src="https://openlayers.org/en/v4.4.1/build/ol.js"></script>
+<script src="https://mapbox.github.io/geojson-vt/geojson-vt-dev.js"></script>
+    
+</html>
+

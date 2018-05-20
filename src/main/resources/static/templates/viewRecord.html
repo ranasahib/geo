@@ -1,0 +1,326 @@
+<div id="container">
+    <div id="record" class="well">
+                <h4><span class="name">View</span> <small class="type"></small></h4>
+    </div>
+    <div id="view-record-form" class="content horizontal">
+        <div class="left vertical">
+            <div id="button-container">
+                <!-- Create Record -->
+                <!--<button id="view-record" class="btn btn-success btn-sm">View Record</button>-->
+            </div>
+            <br>
+        </div>
+        <div class="right vertical scroll-y">
+            <div id="create-record-view"></div>
+            <!-- Record header -->
+            <div id="record" class="well">
+                <h4><span class="name"><span ng-repeat="name in user.name">{{name.value}}</span></span> <small class="type"></small></h4>
+            </div>
+            
+            <div id="record-details-view" class="view">
+                <div id="record-details-panel" class="panel panel-default record-component">
+                    <div class="panel-heading">
+                        <div class="panel-collapse">
+                            <span>Overview</span>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <table class="details-table table table-striped table-bordered">
+                            <tbody>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <label>Id</label>
+                                        </td>
+                                        <td>
+                                            {{user.id}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label>Object Type</label>
+                                        </td>
+                                        <td>
+                                            {{user.objectType}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label>status</label>
+                                        </td>
+                                        <td>
+                                            {{user.status}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label>Name</label>
+                                        </td>
+                                        <td>
+                                            <span ng-repeat="name in user.name">{{name.value}}</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label>Description</label>
+                                        </td>
+                                        <td>
+                                            <span ng-repeat="description in user.description">{{description.value}}</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label>Version Info</label>
+                                        </td>
+                                        <td>
+                                            {{user.versionInfo.versionName}}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="contact-info-view" class="view">
+                <div id="contact-info-panel" class="panel panel-default record-component">
+                    <div class="panel-heading">
+                        <span>Contact Info</span>
+                    </div>
+                    <div class="panel-body">
+                        <table class="contact-info-table table table-striped table-bordered">
+                            <tbody>
+                                <tr ng-if="user.personName">
+                                    <td><label>Name</label></td>
+                                    <td>{{user.personName.firstName}} {{user.personName.middleName}} {{user.personName.lastName}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="contact-info-table table table-striped table-bordered" ng-if="user.addresses && user.telephoneNumbers && user.emailAddresses">
+                            <tbody>
+                                <tr>
+                                    <td><label>Addresses</label></td>
+                                    <td>
+                                        <div class="collection-container">
+                                            <div class="collection">
+                                                <div class="collection-table" ng-repeat="address in user.addresses">
+                                                    <table class="table table-bordered">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <label>City</label>
+                                                                </td>
+                                                                <td class="value">
+                                                                    {{address.city}}
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <label>Country</label>
+                                                                </td>
+                                                                <td class="value">
+                                                                    {{address.country}}
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <label>Postal Code</label>
+                                                                </td>
+                                                                <td class="value">
+                                                                    {{address.postalCode}}
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><label>State Or Province</label></td>
+                                                                <td class="value">
+                                                                    {{address.stateOrProvince}}
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><label>Street</label></td>
+                                                                <td class="value">
+                                                                    {{address.street}}
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><label>Street Number</label></td>
+                                                                <td>{{address.streetNumber}}
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label>Telephone Numbers</label></td>
+                                    <td>
+                                        <div class="collection-container">
+                                            <div class="collection">
+                                                <div class="collection-table" ng-repeat="phoneNumbers in user.telephoneNumbers">
+                                                    <table class="table table-bordered">
+                                                      <tbody>
+                                                        <tr>
+                                                            <td><label>Area Code</label></td>
+                                                            <td class="value">{{phoneNumbers.areaCode}}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><label>Country Code</label></td>
+                                                            <td class="value">{{phoneNumbers.countryCode}}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><label>Extension</label></td>
+                                                            <td class="value">{{phoneNumbers.extension}}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><label>Number</label></td>
+                                                            <td class="value">{{phoneNumbers.number}}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><label>Phone Type</label></td>
+                                                            <td class="value">{{phoneNumbers.phoneType}}</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                              </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label>Email Addresses</label></td>
+                                    <td>
+                                        <div class="collection-container">
+                                            <div class="collection">
+                                                <div class="collection-table" ng-repeat="emailAddress in user.emailAddresses">
+                                                    <table class="table table-bordered">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><label>Address</label></td>
+                                                            <td class="value">{{emailAddress.address}}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><label>Type</label></td>
+                                                            <td class="value">{{emailAddress.type}}</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                              </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>    
+            <div id="slots-view" class="view">
+                <div id="contact-info-panel" class="panel panel-default record-component">
+                    <div class="panel-heading">
+                        <span>Properties</span>
+                    </div>
+                    <div class="panel-body">
+                        <table class="contact-info-table table table-striped table-bordered">
+                            <tbody>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Type</th>
+                                    <th>Value</th>
+                                </tr>
+                                <tr ng-repeat="slot in user.slots">
+                                    <td><label>{{slot.name}}</label></td>
+                                    <td>{{slot.slotType|objectValue}}</td>
+                                    <td><span ng-repeat="value in slot.values">{{value}}</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                                
+                    </div>
+                </div>
+            </div>
+            <div id="associations-view" class="view">
+                <div id="contact-info-panel" class="panel panel-default record-component">
+                    <div class="panel-heading">
+                        <span>Association</span>
+                    </div>
+                    <div class="panel-body">
+                        <table class="contact-info-table table table-striped table-bordered">
+                            <tbody>
+                                <tr>
+                                    <th>Association Type</th>
+                                    <th>Name</th>
+                                    <th>Object Type</th>
+                                </tr>
+                                <tr ng-repeat="association in associationTuples">
+                                    <td><label>{{association.type|objectValue}}</label></td>
+                                    <td><label><span ng-repeat="name in association.name">{{name.value}}</span></label></td>
+                                    <td><label>{{association.objectType|objectValue}}</label></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                                
+                    </div>
+                </div>
+            </div>
+            <div  id="anchor{{'classifications-view'}}" class="anchor" class="view">
+                <div id="contact-info-panel" class="panel panel-default record-component">
+                    <div class="panel-heading">
+                        <span>Classification</span>
+                    </div>
+                    <div class="panel-body">
+                        <table class="contact-info-table table table-striped table-bordered">
+                            <tbody>
+                                <tr>
+                                    <th>Code</th>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                </tr>
+                                <tr ng-repeat="classified in classifiedTuples">
+                                    <td><label>{{classified.code}}</label></td>
+                                    <td><span ng-repeat="name in classified.name">{{name.value}}</span></td>
+                                    <td><span ng-repeat="description in classified.description">{{description.value}}</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                                
+                    </div>
+                </div>
+            </div>
+            <div id="classification-nodes-view" class="view"></div>
+            <div id="external-identifiers-view" class="view"></div>
+            <div id="affected-objects-view" class="view"></div>
+            <div id="registry-object-list-view" class="view"></div>
+            <div id="query-expression-view" class="view"></div>
+            <div id="geometries-view" class="view"></div>
+            <div id="audit-trail-view" class="view">
+                <div id="contact-info-panel" class="panel panel-default record-component">
+                    <div class="panel-heading">
+                        <span>Audit</span>
+                    </div>
+                    <div class="panel-body">
+                        <table class="contact-info-table table table-striped table-bordered">
+                            <tbody>
+                                <tr>
+                                    <th>Event Type</th>
+                                    <th>User</th>
+                                    <th>Timestamp</th>
+                                    <th># of affected object</th>
+                                </tr>
+                                <tr ng-repeat="audit in audits|reverse">
+                                    <td><label>{{audit.eventType|objectValue}}</label></td>
+                                    <td><label>{{audit.user|objectValue}}</label></td>
+                                    <td>{{audit.timestamp}}</td>
+                                    <td>{{audit.affectedObjects.length}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                                
+                    </div>
+                </div>
+            </div>
+            <div id="xml-view" class="view"></div>
+        </div>
+    </div>
+</div>

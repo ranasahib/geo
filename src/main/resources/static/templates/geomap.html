@@ -1,0 +1,126 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+
+<title>Geoportal</title>
+<link rel="stylesheet" type="text/css"
+	href="./mapview_files/jquery-ui-1.11.1.custom.min.css"></link>
+<link rel="stylesheet" type="text/css"
+	href="./mapview_files/bootstrap-3.2.0.min.css"></link>
+<link rel="stylesheet" type="text/css"
+	href="./mapview_files/codemirror-4.7.0.min.css"></link>
+<link rel="stylesheet" type="text/css"
+	href="./mapview_files/prettify-20140304.css"></link>
+<link rel="stylesheet" type="text/css"
+	href="./mapview_files/vis-3.11.0.min.css"></link>
+<link rel="stylesheet" type="text/css"
+	href="./mapview_files/dataTables.bootstrap-20140606.css"></link>
+<link rel="stylesheet" type="text/css"
+	href="./mapview_files/dataTables.colVis-1.1.2.min.css"></link>
+<link rel="stylesheet" type="text/css"
+	href="./mapview_files/client.main.css"></link>
+<link rel="stylesheet" type="text/css" href="./css/main.css"></link>
+<link rel="stylesheet"
+	href="https://openlayers.org/en/v4.2.0/css/ol.css" type="text/css"></link>
+<!-- The line below is only needed for old environments like Internet Explorer and Android 4.x -->
+<script
+	src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
+<script src="https://openlayers.org/en/v4.2.0/build/ol.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="./js/head.js"></script>
+
+
+
+</head>
+<body class="">
+	<!-- Header -->
+	<div id="header" class="main-header header horizontal" style="">
+		<nav id="navigation" class="gradient pull-left">
+			<span id="navigation-branding"> <span class="logo"></span> <span
+				id="headerTitle"><span style="color: #fff;"><span
+						class="secondary-color"
+						style="font-weight: bold; font-size: 18px;">Geo</span>portal
+						Client</span></span>
+			</span>
+			<ul>
+
+				<li><a class="nav-link"
+					href="http://103.62.95.146:8080/map.html" data-target=""><span
+						class="glyphicon glyphicon-globe"></span> Map Layers</a></li>
+
+			</ul>
+		</nav>
+		<div id="login-bar" class="gradient pull-left">
+			<div id="login-content">
+				<a class="white" style="font-size: 14px;"><span
+					class="glyphicon glyphicon-user"></span> <span id="login-name">Sign
+						In</span></a> <br></br> <a class="nav-link white"
+					href="http://103.62.95.146:8080/settings.html"
+					data-target="settings">Settings</a> | <a id="logout" class="white"
+					data-target="logout">Disconnect</a>
+			</div>
+		</div>
+	</div>
+	<!-- Breadcrumb -->
+	<div id="breadcrumb" style="display: block;">
+		<button
+			class="btn btn-primary btn-sm breadcrumb-button-color page-back"
+			href="">Back</button>
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item">Map Layers</li>
+		</ol>
+	</div>
+	<!-- Content -->
+	<div id="container" class="main-content content horizontal scroll-y">
+
+		<div id="map" class="tab-pane" style="overflow: auto;">
+			<div class="map-left col-md-3"
+				style="width: 325px; float: left; border: 1px solid rgb(153, 153, 153); padding: 5px; margin-right: 10px; overflow-y: scroll; height: 502px;">
+				<div id="layers">
+					<div class="well">
+						<h5>
+							<b>Click on layer nodes below to change their properties.</b>
+						</h5>
+						<ul id="layerList">
+							
+         			</ul>
+					</div>
+				</div>
+			</div>
+			<div id="mapid" class="map-right col-md-9"></div>
+			<div id="popup" class="ol-popup">
+				<a href="#" id="popup-closer" class="ol-popup-closer"></a>
+				<div id="popup-content">hi</div>
+			</div>
+			<!-- <div id="info" class="map-right col-md-12"></div> -->
+		</div>
+		<!-- Hidden results container -->
+
+	</div>
+
+	<!-- Footer -->
+	<div id="footer" class="main-footer footer horizontal">
+		<footer>
+			<a id="server-url" class="pull-left" target="_blank" href="#">/home</a>
+			<span class="glyphicon glyphicon-copyright-mark"></span> <a href="#"
+				target="_blank" class="no-decoration">Panace GIS.</a>
+		</footer>
+	</div>
+	<!-- Third party libraries -->
+
+
+
+
+
+	<!-- Galdos scripts -->
+	<!-- Client scripts -->
+
+	<!-- Confirmation modal -->
+	<script src="./js/custom.js"></script>
+
+
+
+
+
+</body>
+</html>

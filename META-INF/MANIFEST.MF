@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: geoportal
+Bundle-SymbolicName: geoportal
+Bundle-Version: 1.0.0.qualifier
+Export-Package: com.cql.extension,
+ com.rd,
+ com.rd.config,
+ com.rd.controller,
+ com.rd.domain,
+ com.rd.dto,
+ com.rd.dto.transaction,
+ com.rd.encryption,
+ com.rd.repository,
+ com.rd.security,
+ com.rd.service,
+ com.rd.utils

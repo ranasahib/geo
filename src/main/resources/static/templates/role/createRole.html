@@ -1,0 +1,45 @@
+<div id="container" class="main-content content horizontal scroll-y">
+	<div class="content horizontal">
+		<div class="right vertical scroll-y">
+			<div id="record" class="well">
+				<h4>
+					<span class="name">Create Role</span> <small class="type"></small>
+				</h4>
+			</div>
+			<div class="view">
+				<div class="panel panel-default">
+					<div class="panel-heading">Create User Role</div>
+					<div class="panel-body">
+						<div class="form-horizontal">
+							<div class="form-group">
+								<label class="col-sm-4">Role Name</label>
+								<div class="col-sm-8">
+									<strong>Note: </strong> Must be at least 3 letters, and contain
+									no spaces <input type="text"
+										class="role-name form-control input-sm" ng-model="role.name">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-4">Role Description</label>
+								<div class="col-sm-8">
+									<input type="text"
+										class="role-description form-control input-sm"
+										ng-model="role.description">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-4"></label>
+								<div class="col-sm-8">
+									<div class="pull-right">
+										<button class="btn btn-primary btn-sm pull-right"
+											ng-click="createRole(role)" name="save-role">Save</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,51 @@
+<div id="container" class="main-content content horizontal scroll-y">
+	<div class="content horizontal">
+		<div class="right vertical scroll-y">
+			<div id="record" class="well">
+				<h4>
+					<span class="name">Create User</span> <small class="type"></small>
+				</h4>
+			</div>
+			<div class="view">
+				<div class="panel panel-default record-component">
+					<div class="panel-heading">
+						<div class="panel-collapse">
+							<span>Overview</span>
+						</div>
+					</div>
+					<div class="panel-body">
+					    <table id="results-table"
+								class="table-view table table-striped table-bordered dataTable no-footer"
+								aria-describedby="results-table_info" role="grid">
+								<thead>
+									<tr role="row">
+										<th class="sorting" tabindex="0" aria-controls="results-table"
+											rowspan="1" colspan="1"
+											aria-label="Login ID: activate to sort column ascending">Role
+											Name</th>
+										<th class="sorting" tabindex="0" aria-controls="results-table"
+											rowspan="1" colspan="1"
+											aria-label="Name: activate to sort column ascending">Role
+											Description</th>
+										<th class="sorting" tabindex="0" aria-controls="results-table"
+											rowspan="1" colspan="1"
+											aria-label="User Role(s): activate to sort column ascending"
+											style="width: 20%;">Action</th>
+									</tr>
+								</thead>
+								<tbody class="results">
+									<tr ng-repeat="role in userRoles">
+										<td>{{role.name}}</td>
+										<td>{{role.description}}</td>
+										<td><span class="view-record span-link"
+											ng-click="deleteRole(role.name,$index)">Delete </span></td>
+									</tr>
+
+								</tbody>
+							</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,82 @@
+<div id="wrapper" class="container-fluid">
+	<div class="row">
+		<div id="navigation" class="well col-sm-2">
+			<nav>
+				<ul class="nav nav-pills nav-stacked" role="navigation">
+					<li class="nav-header">Home</li>
+					<li class="active"><a ui-sref="app.home"> <span
+							class="glyphicon glyphicon-home btn-sm"></span> Home
+					</a></li>
+					<li ng-if="menus.ListOrganisation||menus.CreateOrganisation"
+						class="nav-header">Organisation</li>
+					<li ng-if="menus.ListOrganisation"><a
+						ui-sref="app.organisationList"> <span
+							class="glyphicon glyphicon-list btn-sm"></span>List Organisation
+					</a></li>
+					<li ng-if="menus.InactiveOrganisation">
+					   <a
+						ui-sref="app.inactive_organisation"> <span
+							class="glyphicon glyphicon-cloud btn-sm"></span> Inactive
+							Organisation
+					</a>
+					</li>
+					<li ng-if="menus.CreateOrganisation"><a
+						ui-sref="app.organisation"> <span
+							class="glyphicon glyphicon-cloud btn-sm"></span> Create
+							Organisation
+					</a></li>
+					<li class="nav-header" ng-if="menus.ListRoles">Roles</li>
+					<li ng-if="menus.ListRoles"><a ui-sref="app.list_role"> <span
+							class="glyphicon glyphicon-list btn-sm"></span>List Role
+					</a></li>
+					<li ng-if="menus.CreateRole"><a ui-sref="app.create_role">
+							<span class="glyphicon glyphicon-list btn-sm"></span>Create Role
+					</a>
+					</li>
+					
+					<li ng-if="menus.RolePermission"><a ui-sref="app.role_permission"> <span
+							class="glyphicon glyphicon-list btn-sm"></span>Role Permission
+					</a></li>
+					<li
+						ng-if="menus.ListUser||menus.ApproveUser||menus.SubmitUser||menus.CreateUser"
+						class="nav-header">Users</li>
+					<li ng-if="menus.ListUser"><a ui-sref="app.user_list"> <span
+							class="glyphicon glyphicon-import btn-sm"></span> List User
+					</a></li>
+					<li ng-if="menus.ApproveUser"><a ui-sref="app.user_approve">
+							<span class="glyphicon glyphicon-import btn-sm"></span> Approve
+							User
+					</a></li>
+					<li ng-if="menus.SubmitUser"><a ui-sref="app.user_submit">
+							<span class="glyphicon glyphicon-import btn-sm"></span> Inactive
+							User
+					</a></li>
+					<li ng-if="menus.CreateUser"><a ui-sref="app.user_create">
+							<span class="glyphicon glyphicon-import btn-sm"></span> Create
+							user
+					</a></li>
+					<li ng-if="menus.Harvest" class="nav-header">Harvest</li>
+					<li ng-if="menus.Harvest"><a ui-sref="app.harvest_list"> <span
+							class="glyphicon glyphicon-import btn-sm"></span> Harvest
+					</a></li>
+					<li ng-if="menus.MapLayer||menus.SimpleQuery" class="nav-header">Query</li>
+					<li ng-if="menus.SimpleQuery"><a ui-sref="app.simpleQuery"> <span
+							class="glyphicon glyphicon-flag btn-sm"></span> Simple Query
+					</a></li>
+					<li ng-if="menus.AdvanceQuery"><a ui-sref="app.advanceQuery"> <span
+							class="glyphicon glyphicon-flag btn-sm"></span> Advance Query
+					</a></li>
+					<!-- <li ng-if="menus.MapLayer"><a  ui-sref="mapView"> <span
+							class="glyphicon glyphicon-flag btn-sm"></span> Maps
+					</a></li> -->
+					<li class="nav-header"><a id="logout" class="white"
+						ng-click="logout()">Logout</a></li>
+				</ul>
+			</nav>
+		</div>
+		<div id="content" class="col-sm-10">
+			
+			<div ui-view="appContent"></div>
+		</div>
+	</div>
+</div>

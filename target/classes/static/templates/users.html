@@ -1,0 +1,198 @@
+<div id="container">
+    <div id="users-container">
+        <div id="record" class="well">
+                <h4><span class="name">Users</span> <small class="type"></small></h4>
+        </div>
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-target="#view-users" data-toggle="tab"><span class="glyphicon glyphicon-th-list"></span> View Users</a></li>
+            <li ng-if="menus.ApproveUser"><a data-target="#approve-users" data-toggle="tab"><span class="glyphicon glyphicon-th-list"></span> Approve Users</a></li>
+            <li ng-if="menus.SubmitUser"><a data-target="#submit-users" data-toggle="tab"><span class="glyphicon glyphicon-th-list"></span> Pending Users</a></li>
+            <li ng-if="menus.CreateUser"><a data-target="#create-user" data-toggle="tab"><span class="glyphicon glyphicon-user"></span> Create User</a></li>
+        </ul>
+        <div class="tab-content" style="margin-top: 10px; padding: 5px;">
+            <div id="view-users" class="tab-pane active">
+                <div id="results-table_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+                    <div>
+                        <div class="mid-table">
+                            <table id="results-table" class="table-view table table-striped table-bordered dataTable no-footer" aria-describedby="results-table_info"
+                                role="grid">
+                                <thead>
+                                    <tr role="row">
+                                        <th class="sorting" tabindex="0" aria-controls="results-table" rowspan="1" colspan="1" style="width: 15%;">Login ID</th>
+                                        <th class="sorting" tabindex="0" aria-controls="results-table" rowspan="1" colspan="1" style="width: 20%;">Name</th>
+                                        <th class="sorting" tabindex="0" aria-controls="results-table" rowspan="1" colspan="1" style="width: 20%;">Email</th>
+                                        <th class="sorting" tabindex="0" aria-controls="results-table" rowspan="1" colspan="1" style="width: 25%;">Mobile Number</th>
+                                        <th class="sorting" tabindex="0" aria-controls="results-table" rowspan="1" colspan="1" style="width: 20%;">User Role</th>
+                                        <th class="center sorting_disabled" rowspan="1" colspan="1" aria-label="Actions">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="results">
+                                    <tr class="odd" ng-repeat="user in users">
+                                        <td>{{user.loginName}}</td>
+                                        <td>{{user.firstName}} {{user.middleName}} {{user.lastName}}</td>
+                                        <td>
+                                            {{user.emailAddress}}</p>
+                                        </td>
+                                        <td>
+                                            {{user.mobileNumber}}
+                                        </td>
+                                        <td>
+                                            {{user.userRole}}</p>
+                                        </td>
+                                        <td>
+                                            <a class="view-record span-link" ui-sref="app.viewRecord({id:'U-'+user.id})">[ View ] </a>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="bottom"></div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div id="approve-users" class="tab-pane">
+                <div id="results-table_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+                    <div>
+                        <div class="mid-table">
+                            <table id="results-table" class="table-view table table-striped table-bordered dataTable no-footer" aria-describedby="results-table_info"
+                                role="grid">
+                                <thead>
+                                    <tr role="row">
+                                        <th class="sorting" tabindex="0" aria-controls="results-table" rowspan="1" colspan="1" style="width: 15%;">Login ID</th>
+                                        <th class="sorting" tabindex="0" aria-controls="results-table" rowspan="1" colspan="1" style="width: 20%;">Name</th>
+                                        <th class="sorting" tabindex="0" aria-controls="results-table" rowspan="1" colspan="1" style="width: 20%;">Email</th>
+                                        <th class="sorting" tabindex="0" aria-controls="results-table" rowspan="1" colspan="1" style="width: 20%;">Mobile Number</th>
+                                        <th class="sorting" tabindex="0" aria-controls="results-table" rowspan="1" colspan="1" style="width: 15%;">User Role</th>
+                                        <th class="center sorting_disabled" rowspan="1" colspan="1" aria-label="Actions" style="width: 10%;">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="results">
+                                    <tr class="odd" ng-repeat="user in approveUsers">
+                                        <td>{{user.loginName}}</td>
+                                        <td>{{user.firstName}} {{user.middleName}} {{user.lastName}}</td>
+                                        <td>
+                                            {{user.emailAddress}}</p>
+                                        </td>
+                                        <td>
+                                            {{user.mobileNumber}}
+                                        </td>
+                                        <td>
+                                            {{user.userRole}}</p>
+                                        </td>
+                                        <td>
+                                            <a class="view-record span-link" ng-click="approveUser(user,$index)">[ Approve ] </a>
+                                            
+                                            <a class="view-record span-link" ui-sref="app.viewRecord({id:'U-'+user.id})">[ View ] </a>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="bottom"></div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div id="submit-users" class="tab-pane">
+                <div id="results-table_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+                    <div>
+                        <div class="mid-table">
+                            <table id="results-table" class="table-view table table-striped table-bordered dataTable no-footer" aria-describedby="results-table_info"
+                                role="grid">
+                                <thead>
+                                    <tr role="row">
+                                        <th class="sorting" tabindex="0" aria-controls="results-table" rowspan="1" colspan="1" style="width: 15%;">Login ID</th>
+                                        <th class="sorting" tabindex="0" aria-controls="results-table" rowspan="1" colspan="1" style="width: 20%;">Name</th>
+                                        <th class="sorting" tabindex="0" aria-controls="results-table" rowspan="1" colspan="1" style="width: 20%;">Email</th>
+                                        <th class="sorting" tabindex="0" aria-controls="results-table" rowspan="1" colspan="1" style="width: 20%;">Mobile Number</th>
+                                        <th class="sorting" tabindex="0" aria-controls="results-table" rowspan="1" colspan="1" style="width: 15%;">User Role</th>
+                                        <th class="center sorting_disabled" rowspan="1" colspan="1" aria-label="Actions" style="width: 10%;">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="results">
+                                    <tr class="odd" ng-repeat="user in submitUsers">
+                                        <td>{{user.loginName}}</td>
+                                        <td>{{user.firstName}} {{user.middleName}} {{user.lastName}}</td>
+                                        <td>
+                                            {{user.emailAddress}}</p>
+                                        </td>
+                                        <td>
+                                            {{user.mobileNumber}}
+                                        </td>
+                                        <td>
+                                            {{user.userRole}}</p>
+                                        </td>
+                                        <td>
+                                            <a class="view-record span-link" ng-click="submitUser('U-'+user.id)">[ Submit ] </a>
+                                            <a class="view-record span-link" ui-sref="app.viewRecord({id:'U-'+user.id})">[ View ] </a>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="bottom"></div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+            
+            <div id="create-user" class="tab-pane">
+                <div class="panel panel-default" style="width: 600px;">
+                    <div class="panel-heading">Create User</div>
+                    <div class="panel-body">
+                        <div class="form-horizontal">
+                            <div class="form-group"><label class="col-sm-4">Login Name <span class="asterisk">*</span></label>
+                                <div class="col-sm-8"><input type="text" class="login-name form-control input-sm" ng-model="user.loginName" placeholder="required" required=""></div>
+                            </div>
+                            <div class="form-group"><label class="col-sm-4">First Name <span class="asterisk">*</span></label>
+                                <div class="col-sm-8"><input type="text" class="first-name form-control input-sm" ng-model="user.firstName" placeholder="required" required=""></div>
+                            </div>
+                            <div class="form-group"><label class="col-sm-4">Middle Name</label>
+                                <div class="col-sm-8"><input type="text" class="middle-name form-control input-sm"  ng-model="user.middleName"></div>
+                            </div>
+                            <div class="form-group"><label class="col-sm-4">Last Name <span class="asterisk">*</span></label>
+                                <div class="col-sm-8"><input type="text" class="last-name form-control input-sm"  ng-model="user.lastName" placeholder="required" required=""></div>
+                            </div>
+                            <div class="form-group"><label class="col-sm-4">Email</label>
+                                <div class="col-sm-8"><input type="email" class="email form-control input-sm"   ng-model="user.emailAddress"></div>
+                            </div>
+                            <div class="form-group"><label class="col-sm-4">Email</label>
+                                <div class="col-sm-8"><input type="email" class="email form-control input-sm"   ng-model="user.emailAddress"></div>
+                            </div>
+                            <div class="form-group"><label class="col-sm-4">Role</label>
+                                <div class="col-sm-8">
+                                   <select ng-model="user.userRole" class="form-control input-sm" ng-options="role.name for role in userRoles"></select>
+                                </div>
+                            </div>
+                            <div class="form-group"><label class="col-sm-4">Password <span class="asterisk">*</span></label>
+                                <div class="col-sm-8"><input type="password" class="password-1 form-control input-sm" placeholder="required" required=""></div>
+                            </div>
+                            <div class="form-group"><label class="col-sm-4">Aadhar <span class="asterisk">*</span></label>
+                                <div class="col-sm-8"><input type="text" class="form-control input-sm" placeholder="required" ng-model="user.aadhar" required=""></div>
+                            </div>
+                            <div class="form-group"><label class="col-sm-4">Pan <span class="asterisk">*</span></label>
+                                <div class="col-sm-8"><input type="text" class="form-control input-sm" ng-model="user.pancard" placeholder="required" required=""></div>
+                            </div>
+                            <div class="form-group"><label class="col-sm-4"></label>
+                                <div class="col-sm-8">
+                                    <div class="pull-right">
+                                        <button class="btn btn-primary btn-sm" name="create-user" ng-click="createUser(user)">Save</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

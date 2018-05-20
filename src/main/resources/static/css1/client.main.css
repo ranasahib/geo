@@ -1,0 +1,1319 @@
+/** ====================================================================
+    LOGO/TITLE
+    ==================================================================== */
+
+.logo-bg {
+    background: url("../img/logo.jpg");
+    background-size: 100%;
+    opacity: 0.5;
+}
+
+/** Logo */
+.logo {
+    background: url("../img/logo.jpg");
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: 60px 55px;
+    width: 60px;
+    height: 55px;
+    border-radius: 12px;
+    margin-top: 8px;
+    display: inline-block;
+}
+
+/** Logo container */
+.logo-wrapper {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+/** Branding text */
+.branding-name .name {
+    color: #336699;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/** Logo size for the login page */
+.login-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+}
+
+/** Login container size */
+.login-wrapper {
+    width: 450px;
+}
+
+/** Branding text */
+.branding {
+    font-size: 18px;
+}
+
+/** Primary brand colour */
+.primary-color {
+    color: #336699;
+}
+
+/** Secondary brand colour */
+.secondary-color {
+    color: #C69200;
+}
+
+/** Link colours */
+a {
+    color: #336699;
+}
+
+/** Span (links) colour */
+.span-link {
+    color: #336699;
+    cursor: pointer;
+}
+
+/** Primary button colour */
+.btn-primary {
+    background-color: #336699;
+    border: 1px solid #225486;
+}
+
+/** The colour when hovering over a dropdown menu link */
+.dropdown-menu a:hover {
+    background-color: #336699;
+    color: #fff;
+}
+
+/** Bootstrap panel headings */
+.panel-heading {
+    background: linear-gradient(to bottom,#3C5F96,#224375);
+    border-color: 1px solid #f8f8f8 !important;
+    color: #fff !important;
+}
+
+/** Default gradient colour (navbar, result tables) */
+.gradient {
+    background: linear-gradient(to bottom,#3C5F96,#224375);
+}
+
+/** Breadcrumb buttons (ie. back, edit, etc) */
+.breadcrumb-button-color {
+    color: #336699;
+}
+
+.breadcrumb-button-color:hover {
+    color: #336699;
+}
+
+/** Breadcrumb item (current page title) */
+.breadcrumb-item {
+    font-weight: bold;
+    color: #C69200;
+}
+
+/** Don't style the header for the details-control column */
+th.details-control {
+    background: none;
+    cursor: inherit;
+}
+
+/** Expand table row icon */
+.details-control {
+    background: url("http://www.datatables.net/examples/examples_support/details_open.png") no-repeat center center;
+    cursor: pointer;
+}
+
+/** Collapse table row icon */
+.details .details-control {
+    background: url("http://www.datatables.net/examples/examples_support/details_close.png") no-repeat center center;
+    cursor: pointer;
+}
+
+.nav-pills>li.active>a,
+.nav-pills>li.active>a:hover,
+.nav-pills>li.active>a:focus {
+    color: #fff;
+    background-color: #336699;
+}
+
+.anchor-container button.anchor {
+    color: #336699;
+}
+
+.attribute-tag {
+    color: #336699;
+}
+
+/** ====================================================================
+    CONTENT
+    ==================================================================== */
+
+html {
+    width: 100%;
+    height: 100%;
+    margin: 0.1px;
+    overflow: hidden;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    font-size: 12px;
+    margin: 0.01px;
+}
+
+/** Horizontal row, vertical column */
+.horizontal, .vertical {
+    overflow: hidden;
+    position: absolute;
+}
+
+/** Horizontal row */
+.horizontal {
+    left: 0;
+    right: 0;
+}
+
+/** Vertical column */
+.vertical {
+    top: 0;
+    bottom: 0;
+}
+
+/** Split content (left) size */
+.left.vertical {
+    width: 400px;
+}
+
+/** Split content (right) size */
+.right.vertical {
+    left: 425px;
+    right: 0;
+}
+
+/** Header size */
+.header.horizontal {
+    height: 75px;
+}
+
+/** Body size */
+.content.horizontal {
+    top: 100px;
+    bottom: 30px;
+}
+
+/** Footer size */
+.footer.horizontal {
+    height: 30px;
+    bottom: 0;
+}
+
+/** Main content padding */
+.main-content.content {
+    padding: 10px;
+}
+
+/** Main content container */
+#container {
+    padding: 10px;
+    width: 100%;
+    overflow: auto;
+    top: 110px;
+    bottom: 30px;
+    position: absolute;
+}
+
+/** Header styles */
+
+#header {
+    border-bottom: 4px solid #C69200;
+}
+
+#headerTitle {
+    vertical-align: top;
+    display: inline-block;
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+/** Footer styles */
+
+#footer {
+    border-top: 1px dotted #003366;
+    height: 30px;
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+    text-align: right;
+    line-height: 30px;
+    vertical-align: middle;
+    font-weight: bold;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.scroll-x {
+    overflow-x: auto;
+}
+
+.scroll-y {
+    overflow-y: auto;
+}
+
+/** ====================================================================
+    NAVIGATION
+    ==================================================================== */
+
+#navigation {
+    width: 85%;
+    height: 75px;
+    line-height: 75px;
+    padding-left: 10px;
+    padding-right: 20px;
+}
+
+#navigation ul {
+    margin: 0;
+    padding: 0;
+}
+
+#navigation li {
+    display: inline;
+    margin-right: 20px
+}
+
+#navigation li:last-child {
+    margin-right: 0px;
+}
+
+#navigation a {
+    color: #fff;
+}
+
+#navigation-branding {
+    height: 100%;
+    float: left;
+    margin-right: 30px;
+}
+
+#login-bar {
+    width: 15%;
+    height: 75px;
+}
+
+#login-content {
+    color: #fff;
+    padding: 8px;
+    margin: 10px;
+    text-align: right;
+}
+
+/** ====================================================================
+    GENERAL
+    ==================================================================== */
+
+/** Add padding to all bootstrap contextual backgrounds */
+.bg-primary, .bg-success, .bg-info, .bg-warning, .bg-danger {
+    padding: 10px;
+}
+
+/** Hide elements */
+.hide {
+    display: none;
+}
+
+/** Inline elements */
+.inline {
+    display: inline-block;
+}
+
+/** Bold text */
+.bold {
+    font-weight: bold;
+}
+
+/** Regular font */
+.font-normal {
+    font-weight: normal;
+}
+
+/** Align centre */
+.center {
+    text-align: center;
+}
+
+/** No padding */
+.padding-0 {
+    padding: 0;
+}
+
+/** No margin */
+.margin-0 {
+    margin: 0;
+}
+
+/** 10px horizontal margin */
+.margin-horizontal-10 {
+    margin: 0px 10px;
+}
+
+/** 10px vertical margin */
+.margin-vertical-10 {
+    margin: 10px 0px;
+}
+
+/** Remove default bootstrap outline from buttons */
+.btn:focus {
+    outline: none !important;
+}
+
+/** Smaller form control width (default is 100%) */
+.input-width-sm {
+    width: 100px !important;
+}
+
+/** Smaller form control width (default is 100%) */
+.width-sm {
+    width: 150px;
+}
+
+a.no-decoration {
+    text-decoration: none;
+}
+
+/** ====================================================================
+    TABS
+    ==================================================================== */
+
+.tab-content-bordered {
+    border: 1px solid #ddd;
+    border-top: none;
+    padding: 10px;
+}
+
+/** ====================================================================
+    TABLES/DATATABLES
+    ==================================================================== */
+
+/** Empty datatable text */
+.dataTables_empty {
+    text-align: center;
+    font-weight: bold;
+}
+
+/** Spacing between action links (view/edit/etc) */
+.actions-column > a {
+    margin-right: 3px;
+    cursor: pointer;
+}
+
+/** Datatables pagination */
+.top-pagination {
+    overflow: auto;
+}
+
+/** Datatable table heading */
+.mid {
+    height: 45px;
+    padding: 8px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+
+#object-type-table_filter,
+#object-type-table_wrapper .dataTables_filter input {
+    width: 400px;
+}
+
+table.dataTable {
+    margin-bottom: 0px !important;
+}
+
+#object-types-container {
+    width: 450px;
+    border: none;
+}
+
+/** Default confirmation modal width */
+#confirmation-modal .modal-dialog {
+    width: 500px;
+}
+
+/** Smaller default font size for placeholders (for all browsers) */
+::-webkit-input-placeholder {
+    font-size: 11px;
+}
+
+:-moz-placeholder {
+    font-size: 11px;
+    opacity:  1;
+}
+
+:-ms-input-placeholder {
+    font-size: 11px;
+}
+
+/** Query builder container  */
+#query-builder-container .query-builder-content {
+    padding: 10px;
+    padding-bottom: 0px;
+}
+
+/** Query builder widget styles */
+.simple-query .filter-container .panel-body, .filter-container .panel-heading {
+    padding: 8px;
+}
+
+.simple-query .filter-container {
+    width: 200px;
+}
+
+.simple-query .filter-container .filter {
+    border: none;
+    padding: none;
+}
+
+.white {
+    color: #fff !important;
+}
+
+/** Anchor text */
+#view-record-form .btn-block,
+#dashboard .btn-block {
+    text-align: left;
+}
+
+/** Object type widget */
+#object-type-info {
+    float: left;
+    width: 500px;
+    margin-left: 20px;
+}
+
+#results-container {
+    overflow: hidden;
+    height: 100%;
+}
+
+.span-link:hover {
+    text-decoration: underline;
+}
+
+/** Smaller tabs */
+.tabs-sm > li > a {
+    padding: 8px 10px 5px 10px;
+    color: #fff;
+}
+
+.tabs-sm > li > a:hover {
+    color: #555;
+}
+
+.tabs-sm {
+    border-bottom: 0px;
+    float: right;
+}
+
+.panel {
+    border-radius: 0px;
+}
+
+.panel-table {
+    padding: 0px;
+}
+
+.panel-default {
+    border: 1px solid #d7d7d7;
+}
+
+.dataTables_wrapper .row:first-child {
+    border-bottom: 1px solid #ddd;
+}
+
+.dataTables_wrapper .row:last-child {
+    border-top: 1px solid #ddd;
+}
+
+#object-type-table_filter.dataTables_filter {
+    overflow: hidden;
+}
+
+/** Datatables overrides */
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+    padding: 8px 10px 5px 10px;
+}
+
+/** Default breadcrumb button style */
+#breadcrumb button {
+    background: none;
+    border: none;
+    padding: 8px 15px;
+    font-weight: bold;
+    float: left;
+}
+
+.lang-options {
+    margin-bottom: 8px;
+}
+
+.popover {
+    padding: 0px !important;
+}
+
+.record-component {
+    min-height: 22px;
+}
+
+.red {
+    color: red;
+}
+
+#login-message {
+    padding-left: 20px;
+    padding-top: 5px;
+}
+
+.registry-link {
+    cursor: pointer;
+}
+
+.middle {
+    vertical-align: middle !important;
+}
+
+.message {
+    padding: 10px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.d3-tip {
+  line-height: 1;
+  padding: 12px;
+  background: #fefefe;
+  color: #555;
+  border-radius: 2px;
+  border: 1px solid #999;
+  z-index: 100px;
+}
+
+.association-legend li {
+    float: left;
+    padding-right: 30px;
+}#
+
+.legend {
+    padding-left: 20px;
+    padding-top: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.label {
+    cursor: pointer;
+    margin-left: 5px;
+    margin-right: 5px;
+    font-weight: normal;
+    font-size: 80%;
+}
+
+.loading {
+    float: left;
+    padding: 10px;
+}
+
+#view-record-form > .left,
+#dashboard > .left {
+    width: 200px;
+    border: 2px solid #ddd;
+    padding: 10px 0px 0px 0px;
+    background-color: #f5f5f5;
+}
+
+#view-record-form .anchor-container button,
+#dashboard .anchor-container button {
+    border: none;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-radius: 0px;
+}
+
+#query-builder-widget .panel-body input {
+    width: 100%;
+}
+
+#query-builder-widget .classified-options {
+    height: 17px;
+    font-size: 11px;
+}
+
+.dropdown-menu li {
+    width: 100%;
+}
+
+.dropdown-menu > li > a:hover {
+    color: #fff;
+    background-color: #336699;
+}
+
+#filter-buttons {
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+
+#filter-buttons .clear {
+    width: 60px;
+    margin-bottom: 5px;
+}
+
+.width-70 {
+    width: 70%;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.overflow-auto {
+    overflow: auto;
+}
+
+.disabled {
+    color: #999;
+}
+
+#query-builder-widget .quick {
+    width: 100%;
+    display: inline;
+}
+
+#query-builder-widget .query-builder-content {
+    padding: 0px;
+}
+
+#query-builder-widget #query-builder-container {
+    height: 110px;
+    width: 100%;
+    position: relative;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.full-height {
+    height: 100%;
+}
+
+.overflow-y-hidden {
+    overflow-y: hidden;
+}
+
+.padding-10 {
+    padding: 10px;
+}
+
+#view-record-form,
+#dashboard,
+#query-builder-container {
+    top: 10px;
+    bottom: 15px;
+}
+
+#view-record-form .right,
+#dashboard .right {
+    left: 220px;
+    padding-right: 10px;
+}
+
+#settings-panel {
+    width: 700px;
+}
+
+#stored-query-panel {
+    width: 600px;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.toggle-container {
+    margin-bottom: 10px;
+}
+
+.toggle-container span {
+    font-size: 11px;
+}
+
+.layer-content {
+    margin-top: 5px;
+}
+
+.small-col {
+    width: 30px !important;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.layer-data {
+    table-layout: fixed;
+}
+
+.layer-data tr:hover {
+    cursor: pointer;
+}
+
+.page-number span {
+    margin: 0px;
+    padding: 0px;
+}
+
+.page-number {
+    display: block;
+    overflow: auto;
+    text-align: center;
+}
+
+.layer-style-options {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.layer-data tr:last-child {
+    border-bottom: 1px solid #ddd
+}
+
+.controls {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.controls-rounded {
+    margin: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+}
+
+.controls span {
+    font-size: 11px;
+    color: #336699;
+    cursor: pointer;
+}
+
+.controls span:hover {
+    text-decoration: underline;
+}
+
+.no-bg {
+    color: #666;
+    background: none !important;
+}
+
+.margin-b-sm {
+    margin-bottom: 5px;
+}
+
+.layer-name {
+    color: #555;
+    font-weight: bold;
+    font-size: 13px;
+    margin-left: 10px;
+}
+
+.no-padding {
+    padding: 0px !important;
+}
+
+.layer-heading {
+    padding: 10px 15px;
+}
+
+.color-placeholder {
+    width: 15px;
+    height: 15px;
+}
+
+.modal-backdrop {
+    background-color: #444 !important;
+}
+
+.glyphicon-question-sign {
+    cursor: pointer;
+}
+
+.width-80 {
+    width: 80%;
+}
+
+#left-container {
+    float: left;
+    width: 400px;
+    margin-right: 10px;
+}
+
+#right-container {
+    float: left;
+    width: 400px;
+}
+
+#loading-container {
+    height: 100%;
+    text-align: center;
+}
+
+#loading-container span {
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+a {
+    cursor: pointer;
+}
+
+.popover {
+    padding: 10px;
+    max-width: none !important;
+    width: 430px !important;
+}
+
+.query-pagination {
+    font-weight: bold;
+    overflow: auto;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.modal.fade.ui-draggable-dragging {
+    -moz-transition: none;
+    -o-transition: none;
+    -webkit-transition: none;
+    transition: none;
+}
+
+#right-content .panel {
+    overflow-x: hidden;
+}
+
+.clear-input .icon {
+    float: right;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.map-tabs {
+    height: 35px;
+    line-height: 35px;
+    border-bottom: 2px solid #ddd;
+    background: -webkit-gradient(linear, left top, left bottom, from(#F0F0F0), to(#EEEEEE));
+}
+
+.map-tabs .tab {
+    color: #666;
+    font-weight: bold;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-right: 1px solid #d3d3d3;
+    cursor: pointer;
+}
+
+.map-tabs .tab:last-child {
+    border-right: none;
+}
+
+.map-tabs .active-tab {
+    color: #336699;
+}
+
+.pagination-text {
+    margin: 0px 10px;
+}
+
+#breadcrumb {
+    display: none;
+    height: 35px;
+    width: 100%;
+    text-align: right;
+    top: 75px;
+    position: absolute;
+    border-bottom: 2px solid #ddd;
+}
+
+#hidden-results {
+    display: none;
+}
+
+#object-types-controls {
+    float: right;
+}
+
+.treeTooltip {
+    background: #ffffff;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.treeTooltip th, .treeTooltip td {
+    padding: 5px;
+}
+
+.treeTooltip .propertyName {
+    font-weight: bold;
+}
+
+.record-component .panel-heading {
+    overflow: auto;
+}
+
+.panel-controls {
+    float: right;
+}
+
+.value-list-item, .collection-item {
+    margin-bottom: 5px;
+}
+
+.collection-item input:first-child {
+    margin-right: 5px;
+}
+
+.add-button-container {
+    float: left;
+    margin-right: 5px;
+}
+
+.language-container {
+    float: left;
+    width: 75px;
+    margin-right: 5px;
+}
+
+.model.edit {
+    margin-left: 50px;
+}
+
+.model.multiple {
+    border: 1px dashed #999;
+    padding: 10px;
+    padding-bottom: 0px;
+    margin-bottom: 10px;
+}
+
+#map-modal .modal-dialog {
+    width: 650px;
+}
+
+.map {
+    height: 400px;
+    width: 650px;
+}
+
+.map-bordered {
+    border: 1px solid #999;
+}
+
+.map-body {
+    overflow: hidden;
+    border-top: 1px solid #999;
+    border-bottom: 1px solid #999;
+}
+
+.classifications-table {
+    overflow: auto;
+}
+
+#tree-widget {
+    min-height: 430px !important;
+    max-height: 430px !important;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border-left: 1px solid #ddd;
+}
+
+#tree-search {
+    padding: 5px;
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.langs {
+    float: left;
+    margin-right: 10px;
+}
+
+.lang-value {
+    float: left;
+}
+
+#view-record-form .panel-heading {
+    overflow: hidden !important;
+    max-height: 42px;
+    min-height: 42px;
+}
+
+.panel-collapse {
+    float: left;
+}
+
+.panel-collapse button {
+    margin-right: 10px;
+}
+
+.panel-heading {
+    border-radius: 0px;
+}
+
+.panel-controls {
+    width: 125px;
+}
+
+.panel-controls button {
+    float: right;
+    margin-left: 5px;
+}
+
+#include-container {
+    text-align: right;
+    margin-bottom: 5px;
+}
+
+.address {
+    margin-bottom: 10px
+}
+
+/** Force graph container */
+#associations-view .graph-container {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    height: 600px;
+}
+
+.add-association-tabs {
+    padding: 5px;
+}
+
+.green {
+    color: #009925;
+}
+
+.red {
+    color: #D50F25;
+}
+
+/** Prevent the autocomplete widget from becoming too long */
+.ui-autocomplete {
+    max-height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 1000 !important;
+}
+
+.CodeMirror {
+    border: 1px solid #eee;
+    height: auto;
+}
+
+.CodeMirror-scroll {
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
+.details-table td:first-child,
+.contact-info-table td:first-child {
+    width: 200px;
+}
+
+.model-attr-table {
+    width: 500px;
+}
+
+.collection {
+    overflow: auto;
+}
+
+.collection-table table {
+    float: left;
+    width: 500px;
+}
+
+.collection-table button {
+    float: left;
+    margin-left: 5px;
+}
+
+.empty-collection {
+    padding: 10px;
+    font-weight: bold;
+}
+
+.dataTable input,
+.dataTable .input-group {
+    display: table;
+    width: 100% !important;
+}
+
+.dataTable select {
+    width: 100% !important;
+}
+
+.form-inline .input-group .input-group-btn {
+    width: 1px !important;
+}
+
+.controls-btn {
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.color {
+    color: transparent !important;
+    border: 1px solid #999;
+    width: 13px;
+    height: 15px;
+    cursor: pointer;
+}
+
+#button-container {
+    text-align: center;
+}
+
+.edit-help {
+    margin: 10px;
+}
+
+td.actions {
+    text-align: center;
+}
+
+.ui-autocomplete {
+    max-height: 400px;
+    overflow-y: scroll;
+    font-size: 11px;
+}
+
+select {
+    color: #000;
+}
+
+#map-view-table_length {
+    float: right;
+}
+
+.no-break-column {
+    white-space: nowrap;
+}
+
+.table {
+    margin-bottom: 0px;
+}
+
+.collection-table .table {
+    margin-bottom: 10px;
+}
+
+.layer-panel .panel-body {
+    padding: 5px;
+}
+
+.layer-controls {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.layer-controls button {
+    margin-right: 4px;
+}
+
+#layers .panel-heading {
+    overflow: auto;
+}
+
+#layers .panel-title {
+    float: left;
+}
+
+#layers .badge {
+    float: right;
+}
+
+#layers .table {
+    margin-top: 5px;
+    border: 1px solid #ddd;
+}
+
+#layers .paging {
+    overflow: auto;
+}
+
+.dropdown-menu {
+    float: left !important;
+}
+
+/** Timeline */
+.item .content {
+    padding: 0px;
+}
+
+#point-timeline .vis.timeline.root {
+    border-bottom: 0px !important;
+}
+
+.wrap-text {
+    white-space: -moz-pre-wrap !important;
+    white-space: -webkit-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    word-break: break-all;
+    white-space: normal;
+}
+
+#event-type-options input {
+    margin-left: 10px;
+}
+
+#clone-container {
+    text-align: left;
+}
+
+.saved-query-panel {
+    width: 350px;
+}
+
+.asterisk {
+    color: red;
+}
+
+.affected-object {
+    margin-bottom: 5px;
+}
+
+#map-view-table {
+    border: 1px solid #ddd;
+}
+
+.results-info {
+    padding: 8px;
+}
+
+.layer-panel .panel-heading {
+    background: #f5f5f5 !important;
+    color: #555 !important;
+    font-weight: bold;
+}
+
+.layer-panel .panel-heading input[type="checkbox"] {
+    margin-right: 5px;
+}

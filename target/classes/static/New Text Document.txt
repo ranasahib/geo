@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="jquery.js"></script>
+<script>
+$(document).ready(function(){
+
+     var postData = function(data){
+          console.log(data)
+          $.ajax({
+			type: 'POST',
+			url: 'http://indicio1:8080/indicio//gcs?',
+			headers: {
+                'Content-Type':"application/xml;charset=UTF-8",
+				'Accept' : "application/xml",
+                'Authorization' : "Basic YWRtaW46U2xpdGh5VG92ZXM="
+			},
+			data: data
+		}).success(function (resp) {
+			alert(resp);			
+		}).error(function (err) {
+			alert(err);
+		});
+     }
+    $("button").click(function(){
+        var data = '<gcs:Operation xmlns:gcs="urn:x-galdosinc:common:operations:galdos-common-services"'
+    +' xmlns:urm="urn:x-galdosinc:indicio:user-role-manager"'
+    +' xmlns:csw="http://www.opengis.net/cat/csw/2.0.2"'
+    +' xmlns:rim="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0">'
+    +' <!-- (1) Update user object -->'
+    +' <csw:Transaction service="CSW" version="2.0.2">'
+    +' <csw:Update>'
+    +' <rim:User id="urn:uuid:43062e74-d5d6-4f1a-9b9a-7b770f5b6818">'
+    +' <rim:PersonName firstName="abhisheke" lastName="singh" />'
+    +' <rim:EmailAddress address="abhishek@test.in" type="OfficeEmail" />'
+    +' </rim:User>'
+    +' </csw:Update>'
+    +' </csw:Transaction>'
+    +' <!-- (2) Update user context -->'
+    +' <urm:Transaction>'
+    +' <urm:Update>'
+    +' <urm:UserContext userID="urn:uuid:43062e74-d5d6-4f1a-9b9a-7b770f5b6818" loginName="abhi">'
+    +' <urm:RoleList>'
+    +' <urm:UserRole name="RegistryAdministrator" />'
+    +' </urm:RoleList>'
+    +' </urm:UserContext>'
+    +' </urm:Update>'
+    +' </urm:Transaction>'
+    +' </gcs:Operation>'
+
+        postData(data)
+    });
+});
+</script>
+</head>
+<body>
+
+<button>Update My email</button>
+
+</body>
+</html>

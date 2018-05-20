@@ -1,0 +1,276 @@
+<div id="container" class="main-content content horizontal scroll-y">
+    <form id="view-record-form" class="content horizontal"  name="myForm">
+        <div class="right vertical scroll-y">
+
+            <!-- Record header -->
+            <div id="record" class="well">
+                <h4><span class="name">New Organization</span> <small class="type"></small></h4>
+            </div>
+            <div id="record-details-view" class="view">
+                <div id="record-details-panel" class="panel panel-default record-component">
+                    <div class="panel-heading">
+                        <div class="panel-collapse">
+                            <span>Overview</span>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <table class="details-table table table-striped table-bordered">
+                            <tbody>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <label>Name</label>
+                                        </td>
+                                        <td>
+                                            <input type="text" class="value form-control input-sm" name="id" ng-model="organisation.name" required>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label>Description</label>
+                                        </td>
+                                        <td>
+                                            <input type="text" class="value form-control input-sm" name="description" ng-model="organisation.description">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label>Data Access</label>
+                                        </td>
+                                        <td>
+                                            <label ng-repeat="dataAccess in dataAccesses" style="margin-right: 12px">
+                                                 <input type="radio" name="response" data-ng-model="organisation.dataAccess" data-ng-value="dataAccess.id" />{{dataAccess.name}}
+                                            </label>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div id="contact-info-view" class="view">
+                <div id="contact-info-panel" class="panel panel-default record-component">
+                    <div class="panel-heading">
+                        <span>Contact Info</span>
+                    </div>
+                    <div class="panel-body">
+                        <table class="contact-info-table table table-striped table-bordered">
+                            <tbody>
+                                <tr>
+                                    <td width="20%"><label>Addresses</label></td>
+                                    <td>
+                                        <div class="collection-container">
+                                            <div class="add-button-container">
+                                                <button class="btn btn-success btn-sm" name="add-item" ng-click="plusAddress()">
+                                                    <span class="glyphicon glyphicon-plus-sign"></span>
+                                                </button>
+                                            </div>
+                                            <div class="collection">
+                                                <div class="collection-table" ng-repeat="address in organisation.address">
+                                                    <table class="table table-bordered">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <label>City</label>
+                                                                </td>
+                                                                <td class="value">
+                                                                    <input type="text" class="value form-control input-sm" ng-model="address.city" value="">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <label>Country</label>
+                                                                </td>
+                                                                <td class="value">
+                                                                    <input type="text" class="value form-control input-sm" ng-model="address.country" value="">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <label>Postal Code</label>
+                                                                </td>
+                                                                <td class="value">
+                                                                    <input type="text" class="value form-control input-sm" ng-model="address.postalCode" value="">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><label>State Or Province</label></td>
+                                                                <td class="value">
+                                                                    <input type="text" class="value form-control input-sm" ng-model="address.stateOrProvince" value="">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><label>Street</label></td>
+                                                                <td class="value">
+                                                                    <input type="text" class="value form-control input-sm" ng-model="address.street" value="">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><label>Street Number</label></td>
+                                                                <td class="value"><input type="text" class="value form-control input-sm" ng-model="address.streetNumber"
+                                                                        value="">
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <button class="btn btn-danger btn-sm" name="remove" data-cid="c57" ng-click="minusAddress($index)"><span class="glyphicon glyphicon-minus-sign"></span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label>Telephone Numbers</label></td>
+                                    <td>
+                                        <div class="collection-container">
+                                            <div class="add-button-container">
+                                                <button class="btn btn-success btn-sm" name="add-item" ng-click="plusPhoneNumber()">
+                                                    <span class="glyphicon glyphicon-plus-sign"></span>
+                                                </button>
+                                            </div>
+                                            <div class="collection">
+                                                <div class="collection-table" ng-repeat="phoneNumbers in organisation.phoneNumbers">
+                                                    <table class="table table-bordered">
+                                                      <tbody>
+                                                        <tr>
+                                                            <td><label>Area Code</label></td>
+                                                            <td class="value"><input type="text" class="value form-control input-sm" ng-model="phoneNumbers.areaCode"
+                                                                    value=""></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><label>Country Code</label></td>
+                                                            <td class="value"><input type="text" class="value form-control input-sm" ng-model="phoneNumbers.countryCode"
+                                                                    value=""></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><label>Extension</label></td>
+                                                            <td class="value"><input type="text" class="value form-control input-sm" ng-model="phoneNumbers.extension"
+                                                                    value=""></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><label>Number</label></td>
+                                                            <td class="value"><input type="text" class="value form-control input-sm" ng-model="phoneNumbers.number"
+                                                                    value=""></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><label>Phone Type</label></td>
+                                                            <td class="value">
+                                                                <select class="form-control input-sm" ng-model="phoneNumbers.phoneType">
+                                                                    <option value="HOME">HOME</option>
+                                                                    <option value="OFFICE">OFFICE</option>
+                                                                </select>    
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <button class="btn btn-danger btn-sm" name="remove" data-cid="c57" ng-click="minusPhoneNumber($index)"><span class="glyphicon glyphicon-minus-sign"></span></button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label>Email Addresses</label></td>
+                                    <td>
+                                        <div class="collection-container">
+                                            <div class="add-button-container">
+                                                <button class="btn btn-success btn-sm" name="add-item" ng-click="plusEmailAddress()">
+                                                    <span class="glyphicon glyphicon-plus-sign"></span>
+                                                </button>
+                                            </div>
+                                            <div class="collection">
+                                                <div class="collection-table" ng-repeat="emailAddress in organisation.emailAddress">
+                                                    <table class="table table-bordered">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><label>Address</label></td>
+                                                            <td class="value"><input type="text" class="value form-control input-sm" ng-model="emailAddress.address"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><label>Type</label></td>
+                                                            <td class="value">                                                               
+                                                                <select class="form-control input-sm" ng-model="emailAddress.emailType">
+                                                                    <option value="HOME">HOME</option>
+                                                                    <option value="OFFICE">OFFICE</option>
+                                                                </select>    
+                                                            </td>    
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+
+                                                <button class="btn btn-danger btn-sm" name="remove" data-cid="c57" ng-click="minusEmailAddress($index)"><span class="glyphicon glyphicon-minus-sign"></span></button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div id="record-details-view" class="view">
+                <div id="record-details-panel" class="panel panel-default record-component">
+                    <div class="panel-heading">
+                        <div class="panel-collapse">
+                            <span>Nodal Officer</span>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+
+                        <div class="form-horizontal" style="border: 1px solid #ddd;padding:5px">
+                            <div class="form-group"><label class="col-sm-4">First Name <span class="asterisk">*</span></label>
+                                <div class="col-sm-8"><input type="text" class="first-name form-control input-sm" ng-model="organisation.nodalOfficer.firstName" placeholder="required" required=""></div>
+                            </div>
+                            <div class="form-group"><label class="col-sm-4">Middle Name</label>
+                                <div class="col-sm-8"><input type="text" class="middle-name form-control input-sm" ng-model="organisation.nodalOfficer.middleName"></div>
+                            </div>
+                            <div class="form-group"><label class="col-sm-4">Last Name <span class="asterisk">*</span></label>
+                                <div class="col-sm-8"><input type="text" class="last-name form-control input-sm" ng-model="organisation.nodalOfficer.lastName" placeholder="required" required=""></div>
+                            </div>
+                            <div class="form-group"><label class="col-sm-4">Email</label>
+                                <div class="col-sm-8"><input type="email" class="email form-control input-sm" ng-model="organisation.nodalOfficer.emailAddress"  placeholder="required" required=""></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div id="record-details-view" class="view">
+                <div id="record-details-panel" class="panel panel-default record-component">
+                    <div class="panel-heading">
+                        <div class="panel-collapse">
+                            <span>Admin</span>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+
+                        <div class="form-horizontal" style="border: 1px solid #ddd;padding:5px">
+                            <div class="form-group"><label class="col-sm-4">First Name <span class="asterisk">*</span></label>
+                                <div class="col-sm-8"><input type="text" class="first-name form-control input-sm"  ng-model="organisation.admin.firstName" placeholder="required" required=""></div>
+                            </div>
+                            <div class="form-group"><label class="col-sm-4">Middle Name</label>
+                                <div class="col-sm-8"><input type="text" class="middle-name form-control input-sm"  ng-model="organisation.admin.middleName"></div>
+                            </div>
+                            <div class="form-group"><label class="col-sm-4">Last Name <span class="asterisk">*</span></label>
+                                <div class="col-sm-8"><input type="text" class="last-name form-control input-sm"  ng-model="organisation.admin.lastName" placeholder="required" required=""></div>
+                            </div>
+                            <div class="form-group"><label class="col-sm-4">Email</label>
+                                <div class="col-sm-8"><input type="text" class="email form-control input-sm"  ng-model="organisation.admin.emailAddress" placeholder="required" required=""></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+                        <button ng-disabled="myForm.$invalid" class="btn btn-success btn-sm" ng-click="createOraganistion(organisation)">Create Record</button>
+                
+        </div>
+    </form>
+</div>      
+
+<modal title="Info" visible="showModal">
+	<form role="form">
+	   <p>Organisation Created Successfully</p>
+    </form>
+</modal>  

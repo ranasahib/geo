@@ -1,0 +1,32 @@
+<div id="container">
+    <div id="record" class="well">
+                <h4><span class="name">List Organization</span> <small class="type"></small></h4>
+    </div>
+    <table id="results-table" class="table-view table table-striped table-bordered dataTable no-footer" aria-describedby="results-table_info"
+        role="grid">
+        <thead>
+            <tr role="row">
+                <th class="sorting" tabindex="0" aria-controls="results-table" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending"
+                    style="width: 20%;">Name</th>
+                <th class="sorting" tabindex="0" aria-controls="results-table" rowspan="1" colspan="1" aria-label="Email(s): activate to sort column ascending"
+                    style="width: 20%;">Status</th>
+                <th class="sorting" tabindex="0" aria-controls="results-table" rowspan="1" colspan="1" aria-label="Email(s): activate to sort column ascending"
+                    style="width: 20%;">Action</th>
+            </tr>
+        </thead>
+        <tbody class="results">
+            <tr class="odd" ng-repeat="organisation in organisations">
+                <td><span ng-repeat="name in organisation.name">{{name.value}}</span></td>                                    
+                <td>
+                    <span ng-if="organisation.status.indexOf('Approved') > -1">Approved</span>
+                    <span ng-if="organisation.status.indexOf('Submitted') > -1">Submitted</span>
+                </td>                                   
+                <td>
+                     <a class="view-record span-link" ui-sref="app.viewRecord({id:organisation.id})">[ View ] </a>
+                     <!-- <span class="view-record span-link" ng-click="deleteOrganisation(organisation.id,$index)">[ Delete ] </span>  -->
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>

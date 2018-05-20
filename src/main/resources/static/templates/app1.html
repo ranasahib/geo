@@ -1,0 +1,21 @@
+<nav id="navigation" class="gradient pull-left">
+        <span id="navigation-branding">
+           <span style="color: #fff;font-size:40px">NDR</span>
+        </span>
+        <ul>
+            <li ng-if="menus.CreateOrganisation"><a class="nav-link" ui-sref="app.organisation"><span class="glyphicon glyphicon-home"></span>Create Organisation</a></li>
+            <li ng-if="menus.ListOrganisation"><a class="nav-link" ui-sref="app.organisationList"><span class="glyphicon glyphicon-home"></span>List Organisation</a></li>
+            <li ng-if="menus.Harvest"><a class="nav-link" ui-sref="app.harvest"><span class="glyphicon glyphicon-home"></span>Harvest</a></li>
+            <li ng-if="menus.MapLayer"><a class="nav-link" ui-sref="app.mapLayer"><span class="glyphicon glyphicon-home"></span>Map Layer</a></li>
+            <li ng-if="menus.CreateRole||menus.ListRole"><a class="nav-link" ui-sref="app.roles"><span class="glyphicon glyphicon-user"></span> Roles</a></li>
+            <li ng-if="menus.ListUser||menus.CreateUser"><a class="nav-link" ui-sref="app.users"><span class="glyphicon glyphicon-user"></span> Users</a></li>
+        </ul>
+    </nav>
+    <div id="login-bar" class="gradient pull-left">
+        <div id="login-content">
+            <a id="logout" class="white" ng-click="logout()">Logout</a>
+        </div>
+    </div>
+    
+    <div ui-view="appContent"></div>
+    

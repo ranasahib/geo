@@ -1,0 +1,45 @@
+<div id="container" class="main-content content horizontal scroll-y">
+	<div class="content horizontal">
+		<div class="right vertical scroll-y">
+			<div id="record" class="well">
+				<h4>
+					<span class="name">Role Permission</span> <small class="type"></small>
+				</h4>
+			</div>
+			<div class="view">
+				<div class="panel panel-default">
+					<div class="panel-heading">Role permission</div>
+					<div class="panel-body">
+						<div class="form-horizontal">
+							<div class="form-group">
+								<label class="col-sm-4">Role Name</label>
+								<div class="col-sm-8">
+									<select ng-model="userRole.role"
+										ng-change="listRolePermission(userRole)"
+										class="form-control input-sm"
+										ng-options="role.name for role in userRoles"></select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-8">Role Permission</label>
+								<div class="col-sm-8" ng-repeat="menuName in menuNames">
+									<input type="checkbox" ng-model="userRole.permission[menuName]">
+									{{menuName}}
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-4"></label>
+								<div class="col-sm-8">
+									<div class="pull-right">
+										<button class="btn btn-primary btn-sm pull-right"
+											ng-click="rolePermission(userRole)" name="save-role">Save</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

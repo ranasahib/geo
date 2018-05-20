@@ -1,0 +1,100 @@
+<style type="text/css">
+html, body {
+	height: 100%;
+	min-height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+/* The styling bolow is very simple. You can style things your own way. */
+.split-pane-divider {
+	background: #aaa;
+}
+
+.split-pane-component {
+	background: #fff;
+}
+
+#map {
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	position: absolute;
+	top: 1;
+	left: 1;
+}
+* {
+            border-radius: 0 !important;
+        }
+</style>
+<div style="background:#023d48;height:40px;padding:10px"></div>
+<div data-split-pane data-split-pane-properties="splitPaneProperties">
+	<div data-split-pane-component data-width="40em">
+	   
+	   <div id="query-builder" class="query-builder-full tab-pane active">
+	    
+	         <div style="margin:20px 10px;">
+				<button class="query btn btn-primary btn-sm">
+					<span class="glyphicon glyphicon-search"></span> Execute Query
+				</button>
+				<hr/>
+
+				<div class="operator-display"></div>
+				<div class="query-builder-body group well">
+					<div class="filter-container">
+						<div class="operator-container">
+							<div class="operators">
+								<label class="form-inline">Match <select
+									class="operator form-control input-sm">
+										<option value="AND">all</option>
+										<option value="OR">one or more</option>
+								</select> of the following conditions:
+								</label>
+							</div>
+						</div>
+						<div class="button-container">
+							<div class="buttons">
+								<button class="add-condition btn btn-success btn-sm">
+									<span class="glyphicon glyphicon-plus-sign"></span> Add
+									Condition
+								</button>
+								<button class="add-group btn btn-success btn-sm">
+									<span class="glyphicon glyphicon-plus-sign"></span> Add Group
+								</button>
+								<button class="clear-all btn btn-danger btn-sm top-level">
+									<span class="glyphicon glyphicon-minus-sign"></span> Remove
+								</button>
+							</div>
+						</div>
+						<div class="filters">
+							<div class="form-inline filter">
+								<div class="operator-display"></div>
+								<button class="remove-filter btn btn-danger btn-sm">
+									<span class="glyphicon glyphicon-minus-sign"></span>
+								</button>
+								<select class="filter-options form-control input-sm"><option
+										value="Contains">Contains</option>
+									<option value="Classified As">Classified As</option>
+									<option value="Classified Under">Classified Under</option>
+									<option value="Inside">Inside</option></select><span
+									class="input-container"><input type="text"
+									class="value form-control input-sm" /></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	   </div>
+	   
+	   
+	   
+    </div>
+	         
+	<div data-split-pane-divider data-width="5px"></div>
+	<div data-split-pane-component>
+
+		<div id="mapid" style="width: 100%; height: 100%; position: fixed">
+		</div>
+
+	</div>
+</div>

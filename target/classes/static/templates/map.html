@@ -1,0 +1,139 @@
+<style type="text/css">
+html, body {
+	height: 100%;
+	min-height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+/* The styling bolow is very simple. You can style things your own way. */
+.split-pane-divider {
+	background: #aaa;
+}
+
+.split-pane-component {
+	background: #fff;
+}
+
+#map {
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	position: absolute;
+	top: 1;
+	left: 1;
+}
+
+* {
+	border-radius: 0 !important;
+}
+</style>
+
+<div data-split-pane data-split-pane-properties="splitPaneProperties">
+	<div data-split-pane-component data-width="40em">
+
+		<div id="query-builder"
+			class="query-builder-full tab-pane active">
+
+			<div style="margin: 20px 10px;">
+
+				<div class="operator-display"></div>
+				<div class="query-builder-body group well">
+					<div class="filter-container">
+
+
+						<div class="filters">
+							<div class="form-inline filter">
+								<span class="input-container"><input type="text"
+									class="value form-control input-sm" ng-model="Query.terms" /></span>
+								<button class="query btn btn-primary btn-sm"
+									ng-click="executeSearch(Query)">
+									<span class="glyphicon glyphicon-search"></span> Execute Query
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div>
+			<ul class="list-group">
+				<li class="list-group-item" ng-if="$index > 1"
+					ng-repeat="harvest in resultData">
+					<div id="nav">
+						<ul class="nav nav-tabs">
+							<li class="active"><a data-target="#1" data-toggle="tab">About</a></li>
+							<li><a data-target="#2" data-toggle="tab">Layers</a></li>
+							<li><a data-target="#3" data-toggle="tab">Meta Data</a></li>
+						</ul>
+						<div class="tab-content "
+							style="border: 1px solid #ddd; border-top: none;">
+							<div class="tab-pane active" id="1" style="padding: 10px">
+							{{harvest}}
+								<table style="margin: 0;">
+									<tr>
+										<td>Data Service Name</td>
+										<td>:{{harvest.serviceObject.name}}</td>
+									</tr>
+									<tr>
+										<td>Organization/Agency</td>
+										<td>: {{harvest.organisation}}</td>
+									</tr>
+									<tr>
+										<td>Service type</td>
+										<td>: {{harvest.serviceObject.serviceType}}</td>
+									</tr>
+									<tr>
+										<td>Category/Classification</td>
+										<td>: {{harvest.classification}}</td>
+									</tr>
+									<tr>
+										<td>Service Description</td>
+										<td>: {{harvest.serviceObject.description}}</td>
+									</tr>
+									<tr>
+										<td>Layers</td>
+										<td>:{{harvest.name}}</td>
+									</tr>
+									<tr>
+										<td>Last Updated</td>
+										<td>: {{harvest.lastUpdated}}</td>
+									</tr>
+									<tr>
+										<td>No of records</td>
+										<td>: {{harvest.noOfRecords}}</td>
+									</tr>
+								</table>
+							</div>
+							<div class="tab-pane" id="2" style="padding: 10px">
+								<ul class="list-group">
+									<li class="list-group-item" ng-if="$index > 1"
+										ng-repeat="layer in harvest.layers">{{layer.name}} <br>
+										<div class="range-slider">
+											<input class="range-slider__range" type="range" min="0"
+												max="1" ng-model="layer.opacity"
+												ng-change="changeOpacity(layer.opacity,$index)" step="0.01"></input>
+										</div>
+
+									</li>
+								</ul>
+							</div>
+							<div class="tab-pane" id="3" style="padding: 10px">
+								{{harvest.metaDatas}}</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+
+	<div data-split-pane-divider data-width="5px"></div>
+	<div data-split-pane-component>
+
+		<div id="mapid" style="width: 100%; height: 100%; position: fixed">
+		</div>
+
+	</div>
+</div>

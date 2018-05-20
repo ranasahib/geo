@@ -1,0 +1,308 @@
+<div id="container" class="main-content content horizontal scroll-y">
+	<div id="query-builder-container" class="content horizontal scroll-y">
+		<ul class="nav nav-tabs">
+			<li class="active"><a data-target="#simple-query"
+				data-toggle="tab"><span class="glyphicon glyphicon-th-list"></span>
+					Simple Query</a></li>
+			<li class=""><a data-target="#query-builder"
+				data-toggle="tab"><span class="glyphicon glyphicon-th-list"></span>
+					Advance Query</a></li>
+
+		</ul>
+		<div class="tab-content" style="margin-top: 10px; padding: 5px;">
+			<div id="simple-query" class=" tab-pane active">
+				<section>
+					<div class="form-horizontal">
+						<div class="form-group">
+							<label for="QueryResourceUrl" class="col-sm-2 control-label">Enter
+								keyword</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" name="resourceURL"
+									ng-model="Query.terms" required>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-10">
+								<button type="submit" class="btn btn-primary"
+									ng-click="QueryData(Query)">Search</button>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section>
+				<div><span>{{ResultCount}}</span></div>
+					<div id="record-details-panel" ng-repeat="result in ResultData"
+						class="panel panel-default record-component">
+						<div class="panel-heading">
+							<div class="panel-collapse">
+								<span>{{result.serviceObject.name}}</span>
+							</div>
+						</div>
+						<div class="panel-body">
+							<table class="details-table table table-striped table-bordered">
+								<tbody>
+									<tr>
+										<td><label>Data Service Name</label></td>
+										<td>{{result.serviceObject.name}}</td>
+									</tr>
+									<tr>
+										<td><label>Service Type</label></td>
+										<td>{{result.serviceObject.serviceType}}</td>
+									</tr>
+									<tr>
+										<td><label>Description</label></td>
+										<td>{{result.serviceObject.description}}</td>
+									</tr>
+									<tr>
+										<td><label>Layer</label></td>
+										<td>{{result.name}}</td>
+									</tr>
+									<tr>
+										<td><label>Classification</label></td>
+										<td>{{result.classification}}</td>
+									</tr>
+									<tr>
+										<td><label>createdAt</label></td>
+										<td>{{result.createdOn}}</td>
+									</tr>
+									<tr>
+										<td><label>updatedAt</label></td>
+										<td>{{result.LastUpdatedOn}}</td>
+									</tr>
+									<tr>
+										<td><label>Feature Count</label></td>
+										<td>{{result.featureCount}}</td>
+									</tr>
+									<tr>
+										<td><label>Layer Id(hidden)</label></td>
+										<td>{{result.ID}}</td>
+									</tr>
+									<tr>
+										<td><label>Service Id(hidden)</label></td>
+										<td>{{result.serviceObject.id}}</td>
+									</tr>
+									<tr>
+										<td><label>URL(hidden)</label></td>
+										<td>{{result.serviceObject.accessURI}}</td>
+									</tr>
+									<tr>
+										<td><label>Additional Data</label></td>
+										<td><div ng-repeat="slot in result.slots">
+										{{slot.name}} : {{slot.values}}
+										
+										</div></td>
+									</tr>
+									<tr>
+										<td><label>Map</label></td>
+										<td><a ui-sref="mapView({accessUrl:result.serviceBindings[0].accessURI})"> <span
+												class="glyphicon glyphicon-flag btn-sm"></span> View Layers
+										</a></td>
+										<!-- <td><div class="panel panel-default">
+										<div class="panel-heading">
+											<h4 class="panel-title">
+												<a href="" data-toggle="collapse"
+													data-parent="#accordion" data-target="#bbox">
+													Show/Hide </a>
+											</h4>
+										</div>
+										<div id="bbox" class="panel-collapse collapse">
+											<div class="panel-body"></div>
+										</div>
+									</div></td> -->
+									</tr>
+
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</section>
+				<!-- <div class="form-horizontal">
+				<table>
+					<tr ng-repeat="result in ResultData">
+						<td>{{result.name[0].value}}</td>
+						<td>{{result.description[0].value}}</td>
+					</tr>
+				</table>
+			</div> -->
+
+
+
+			</div>
+
+			<div id="query-builder" class="query-builder-full tab-pane">
+				<div class="form-group">
+				<button type="submit" class="query btn btn-primary btn-sm" ng-click="advanceQuery()">
+					<span class="glyphicon glyphicon-search"></span> Execute Query
+				</button>
+		</div>
+				<div class="operator-display"></div>
+				<div class="query-builder-body group well">
+					<div class="filter-container">
+						<div class="operator-container">
+							<div class="operators">
+								<label class="form-inline">Match <select
+									class="operator form-control input-sm">
+										<option value="AND">all</option>
+										<option value="OR">one or more</option>
+								</select> of the following conditions:
+								</label>
+							</div>
+						</div>
+						<div class="button-container">
+							<div class="buttons">
+								<button class="add-condition btn btn-success btn-sm">
+									<span class="glyphicon glyphicon-plus-sign"></span> Add
+									Condition
+								</button>
+								<button class="add-group btn btn-success btn-sm">
+									<span class="glyphicon glyphicon-plus-sign"></span> Add Group
+								</button>
+								<button class="clear-all btn btn-danger btn-sm top-level">
+									<span class="glyphicon glyphicon-minus-sign"></span> Remove
+								</button>
+							</div>
+						</div>
+						<div class="filters">
+							<div class="form-inline filter">
+								<div class="operator-display"></div>
+								<button class="remove-filter btn btn-danger btn-sm">
+									<span class="glyphicon glyphicon-minus-sign"></span>
+								</button>
+								<select class="filter-options form-control input-sm"><option
+										value="Contains">Contains</option>
+									<option value="Classified As">Classified As</option>
+									<option value="Classified Under">Classified Under</option>
+									<option value="Inside">Inside</option></select><span
+									class="input-container"><input type="text"
+									class="value form-control input-sm" /></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<section>
+					<div id="record-details-panel" ng-repeat="result in AdvanceResultData"
+						class="panel panel-default record-component">
+						<div class="panel-heading">
+							<div class="panel-collapse">
+								<span>{{result.name[0].value}}</span>
+							</div>
+						</div>
+						<div class="panel-body">
+							<table class="details-table table table-striped table-bordered">
+								<tbody>
+									<tr>
+										<td><label>Description</label></td>
+										<td>{{result.description[0].value}}</td>
+										<td>{{result.serviceBindings[0].accessURI}}</td>
+									</tr>
+									<tr>
+										<td><label>Map</label></td>
+										<td><a ui-sref="mapView({accessUrl:result.serviceBindings[0].accessURI})"> <span
+												class="glyphicon glyphicon-flag btn-sm"></span> View Layers
+										</a></td>
+										<!-- <td><div class="panel panel-default">
+										<div class="panel-heading">
+											<h4 class="panel-title">
+												<a href="" data-toggle="collapse"
+													data-parent="#accordion" data-target="#bbox">
+													Show/Hide </a>
+											</h4>
+										</div>
+										<div id="bbox" class="panel-collapse collapse">
+											<div class="panel-body"></div>
+										</div>
+									</div></td> -->
+									</tr>
+
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</section>
+				
+			</div>
+		</div>
+	</div>
+</div>
+<div id="maps-container">
+	<div id="map-modal" class="modal fade" tabindex="-1" aria-hidden="true"
+		style="display: none;">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button class="close" data-dismiss="modal">
+						<span aria-hidden="true">X</span><span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title inline">Spatial Constraint</h4>
+				</div>
+				<div class="map-body">
+					<div class="map" id="bbox">
+					</div>
+				</div>
+				<div class="modal-footer">
+					<div class="pull-right">
+						<button class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
+						<button class="btn btn-primary btn-sm" data-dismiss="modal"
+							name="save-coords">Save</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/html" id="groupContainer">
+<div class="operator-display" data-content="operator" >
+		</div>
+	<div class="form-inline filter group white-bg">
+		<div class="filter-container">
+			<div class="operator-container">
+				<div class="operators">
+					<label class="form-inline">Match <select
+						class="operator form-control input-sm"><option
+								value="AND">all</option>
+							<option value="OR">one or more</option></select> of the following
+						conditions:
+					</label>
+				</div>
+			</div>
+			<div class="button-container">
+				<div class="buttons">
+					<button class="add-condition btn btn-success btn-sm">
+						<span class="glyphicon glyphicon-plus-sign"></span> Add Condition
+					</button>
+					<button class="add-group btn btn-success btn-sm">
+						<span class="glyphicon glyphicon-plus-sign"></span> Add Group
+					</button>
+					<button class="clear-all btn btn-danger btn-sm">
+						<span class="glyphicon glyphicon-minus-sign"></span> Remove
+					</button>
+				</div>
+			</div>
+			<div class="filters"></div>
+		</div>
+	</div>
+	</script>
+
+<script type="text/html" id="conditionContainer">
+	
+		<div class="operator-display" data-content="operator">
+		</div>
+		<button class="remove-filter btn btn-danger btn-sm">
+			<span class="glyphicon glyphicon-minus-sign"></span>
+		</button>
+		<select class="filter-options form-control input-sm"><option
+				value="Contains">Contains</option>
+			<option value="Classified As">Classified As</option>
+			<option value="Classified Under">Classified Under</option>
+			<option value="Inside">Inside</option></select><span class="input-container"><input
+			type="text" class="value form-control input-sm"/></span>
+	
+	</script>
+<!-- Galdos scripts -->
+<script type="text/javascript" src="js/galdos.common.js"></script>
+<script type="text/javascript" src="js/galdos.registry.js"></script>
+<!-- Client scripts -->
+<script type="text/javascript" src="js/client.tree.js"></script>
+<!-- <script type="text/javascript" src="js/client.query.builder.js"></script> -->

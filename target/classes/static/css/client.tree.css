@@ -1,0 +1,60 @@
+/** Border style **/
+
+.border-colour {
+    border: 3px solid #ccc;
+}
+
+/** Tree container */
+
+#tree {
+    width: 300px;
+    outline: none;
+}
+
+/** SVG styles */
+
+.node circle {
+    cursor: pointer;
+    fill: #fff;
+    stroke: #4682B4;
+    stroke-width: 1.5px;
+}
+
+.node text {
+    cursor: pointer;
+    font-size: 10px;
+    font-family: sans-serif;
+}
+
+path.link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 2px;
+    fill-opacity: 1;
+}
+
+/** Selected/unselected text styles */
+
+.selected {
+    fill: red;
+}
+
+.unselected {
+    fill: black;
+}
+
+.node-text {
+    cursor: pointer;
+}
+
+.confine-num {
+    width: 50px;
+}
+
+.quick-search {
+    width: 300px;
+}
+
+.search-container {
+    margin-bottom: 10px;
+}

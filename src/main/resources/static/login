@@ -1,0 +1,56 @@
+login request :
+  request : {usercontext: {password: "Sja@2211", loginName: "abhi"}}
+  response : {"message":"Pass","userContexts":[{"userID":"urn:uuid:43062e74-d5d6-4f1a-9b9a-7b770f5b6818","loginName":"abhi","hashedPassword":"$1$5z4qv1Jg$Zl4L5qm9nyzGYfwMqezZ4A==","roleList":[{"name":"RegistryAdministrator","description":"An Administrator of the registry"}]}]}
+
+
+getByid
+
+http://192.168.0.107:8080/indicio/query?request=GetRecordById&service=WRS&version=1.0.1&id=urn%3Auuid%3A43062e74-d5d6-4f1a-9b9a-7b770f5b6818&resultType=object&outputFormat=application%2Fjson&view=
+
+response : {"searchResults": [{"id":"urn:uuid:43062e74-d5d6-4f1a-9b9a-7b770f5b6818","lid":"urn:uuid:43062e74-d5d6-4f1a-9b9a-7b770f5b6818","objectType":"urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Person:User","status":"urn:oasis:names:tc:ebxml-regrep:StatusType:Submitted","slots":[{"name":"LastAccess","slotType":"xsd:dateTime","values":["2017-07-22T20:03:31Z"]}],"versionInfo":{"versionName":"20170722T103755Z","comment":""}}]}  
+
+Delete
+  request
+  {transaction: [{delete: ["urn:uuid:ab04b3e6-147a-4884-8525-e90f61995dab"]}]}
+
+
+Approved
+
+request
+
+   <?xml version="1.0" encoding="UTF-8"?>
+
+<lcm:Transaction xmlns:lcm="urn:x-galdosinc:indicio:life-cycle-manager">
+
+<!-- change life-cycle 'status' of selected records to 'Approved' -->
+
+<lcm:Update
+
+targetStatus="urn:oasis:names:tc:ebxml-regrep:StatusType:Approved">
+
+<csw:GetRecords service="CSW-ebRIM" version="1.0.1"xmlns:csw="http://www.opengis.net/cat/csw/2.0.2"
+
+xmlns:ogc="http://www.opengis.net/ogc"
+
+startPosition="1" maxRecords="10000"
+
+outputFormat="application/xml"
+
+resultType="results">
+
+<csw:Query typeNames="ExtrinsicObject">
+
+<csw:ElementSetName typeNames="ExtrinsicObject"
+
+>brief</csw:ElementSetName>
+
+<csw:Constraint version="1.1.0">
+
+</csw:Constraint>
+</csw:Query>
+
+</csw:GetRecords>
+
+</lcm:Update>
+
+</lcm:Transaction>  

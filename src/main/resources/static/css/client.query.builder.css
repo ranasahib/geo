@@ -1,0 +1,74 @@
+.modal-body {
+    overflow: hidden;
+}
+
+.query-builder-body {
+    padding: 10px;
+}
+
+.button-container {
+    margin-bottom: 10px;
+}
+
+.operator-display {
+    font-weight: bold;
+    margin-left: 175px;
+}
+
+.buttons button {
+    margin-right: 5px;
+}
+
+.filter input,
+.filter select,
+.filter button {
+    margin-right: 5px;
+}
+
+.input-container input {
+    width: 200px !important;
+}
+
+.white-bg {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+/** Query builder widget */
+
+.query-builder-widget {
+    overflow: auto;
+}
+
+.query-builder-widget .widget-operator {
+    margin-right: 10px;
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+.query-builder-widget .filter-container {
+    width: 1200px;
+}
+
+.query-builder-widget .group {
+    padding: 0px;
+}
+
+.query-builder-widget .filter {
+    width: 200px;
+    margin-right: 10px;
+}
+
+.query-builder-widget .panel-body {
+    padding: 8px;
+}
+
+.query-builder-widget .input-container input {
+    width: 100% !important;
+}
+
+.query-builder-widget .buttons button {
+    margin: 5px;
+}

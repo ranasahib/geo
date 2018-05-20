@@ -1,0 +1,107 @@
+<div id="container">
+    <div id="record" class="well">
+			<h4>
+				<span class="name">Harvest</span> <small class="type"></small>
+			</h4>
+		</div>
+	<div id="content" class="col-sm-10">
+		<section>
+			<div class="form-horizontal">
+				<div class="form-group">
+					<label for="harvestResourceUrl" class="col-sm-2 control-label">Resource
+						URL</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" name="resourceURL"
+							ng-model="harvest.source" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="harvestResourceType" class="col-sm-2 control-label">Resource
+						Type</label>
+					<div class="col-sm-10">
+						<select class="form-control" name="resourceType"
+							ng-model="harvest.resourceType" required="">
+							<option value="http://www.isotc211.org/2005/gmd">http://www.isotc211.org/2005/gmd</option>
+							<option value="http://www.opengis.net/cat/wrs/1.0">http://www.opengis.net/cat/wrs/1.0</option>
+							<option value="http://www.opengis.net/def/serviceType/ogc/wfs/2.0">http://www.opengis.net/def/serviceType/ogc/wfs/2.0</option>
+							<option value="http://www.opengis.net/kml/2.2">http://www.opengis.net/kml/2.2</option>
+							<option value="http://www.opengis.net/wfs">http://www.opengis.net/wfs</option>
+							<option value="http://www.opengis.net/wms">http://www.opengis.net/wms</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="harvestResourceUrl" class="col-sm-2 control-label">Store Name</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" ng-model="harvest.storeName" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="harvestResourceUrl" class="col-sm-2 control-label">Node Name</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control"	ng-model="harvest.nodeName" required>
+					</div>
+				</div>
+				<div class="form-group">
+				    <label for="harvestResourceUrl" class="col-sm-2 control-label">DataAccess</label>
+					<div class="col-sm-10">
+						<select ng-model="harvest.dataAccessObj"
+							class="form-control input-sm"
+							ng-options="dataAccess.name for dataAccess in dataAccesses"></select>
+					</div>
+				</div>
+				<div class="form-group">
+				    <label for="dataClassification" class="col-sm-2 control-label">DataClassification</label>
+					<div class="col-sm-10">
+						<select ng-model="harvest.dataClassificationObj"
+							class="form-control input-sm"
+							ng-options="dataClassification.name for dataClassification in dataClassifications"></select>
+					</div>
+				</div>
+				
+				<div ng-if="harvest.dataClassificationObj.name == 'private'" class="form-group">
+				    <label for="price" class="col-sm-2 control-label">Users</label>
+					<div class="col-sm-10">
+						<select ng-model="harvest.users"
+							class="form-control input-sm" multiple="true"
+							ng-options="user.firstName for user in users"></select>
+					</div>
+				</div>
+				
+				<div class="form-group">
+				    <label for="price" class="col-sm-2 control-label">Price</label>
+					<div class="col-sm-10">
+						<select ng-model="harvest.priceObj"
+							class="form-control input-sm"
+							ng-options="price.name for price in prices"></select>
+					</div>
+				</div>
+				
+				<div ng-if="harvest.priceObj.name == 'paid'" class="form-group">
+					<label for="cost" class="col-sm-2 control-label">Cost</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" ng-model="harvest.cost" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="year" class="col-sm-2 control-label">Year</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" ng-model="harvest.year" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="locality" class="col-sm-2 control-label">Locality</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" ng-model="harvest.locality" required>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<button type="submit" class="btn btn-primary" ng-click="harvestData(harvest)">Submit</button>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</div>

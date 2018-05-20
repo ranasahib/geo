@@ -1,0 +1,27 @@
+<div id="container">
+    <div id="record" class="well">
+                <h4><span class="name">List Harvest</span> <small class="type"></small></h4>
+    </div>
+    <a ui-sref="app.harvest">Harvest</a>
+    
+    <table id="results-table" class="table-view table table-striped table-bordered dataTable no-footer" aria-describedby="results-table_info"
+        role="grid">
+        <thead>
+            <tr role="row">
+                <th>Store Name</th>
+                <th>Node Name</th>
+                <th>Version</th>
+                <th>Sync</th>
+            </tr>
+        </thead>
+        <tbody class="results">
+            <tr class="odd" ng-repeat="harvest in harvests">
+                <td>{{harvest.storeNames.join()}}</td>          
+                <td>{{harvest.nodeNames.join()}}</td>                                    
+                <td>{{harvest.updateSequence}}</td>                                    
+                <td><button ng-click="syncHarvest(harvest.id)">Sync</button></td>  
+            </tr>
+
+        </tbody>
+    </table>
+</div>

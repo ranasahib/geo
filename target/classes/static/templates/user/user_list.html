@@ -1,0 +1,49 @@
+<div id="container" class="main-content content horizontal scroll-y">
+	<div class="content horizontal">
+		<div class="right vertical scroll-y">
+			<div id="record" class="well">
+				<h4>
+					<span class="name">User List</span> <small class="type"></small>
+				</h4>
+			</div>
+			<div class="view">
+
+				<table id="results-table"
+					class="table-view table table-striped table-bordered dataTable no-footer"
+					aria-describedby="results-table_info" role="grid">
+					<thead>
+						<tr role="row">
+							<th class="sorting" tabindex="0" aria-controls="results-table"
+								rowspan="1" colspan="1" style="width: 15%;">Login ID</th>
+							<th class="sorting" tabindex="0" aria-controls="results-table"
+								rowspan="1" colspan="1" style="width: 20%;">Name</th>
+							<th class="sorting" tabindex="0" aria-controls="results-table"
+								rowspan="1" colspan="1" style="width: 20%;">Email</th>
+							<th class="sorting" tabindex="0" aria-controls="results-table"
+								rowspan="1" colspan="1" style="width: 25%;">Mobile Number</th>
+							<th class="sorting" tabindex="0" aria-controls="results-table"
+								rowspan="1" colspan="1" style="width: 20%;">User Role</th>
+							<th class="center sorting_disabled" rowspan="1" colspan="1"
+								aria-label="Actions">Actions</th>
+						</tr>
+					</thead>
+					<tbody class="results">
+						<tr class="odd" ng-repeat="user in users">
+							<td>{{user.loginName}}</td>
+							<td>{{user.firstName}} {{user.middleName}} {{user.lastName}}</td>
+							<td>{{user.emailAddress}}
+								</p>
+							</td>
+							<td>{{user.mobileNumber}}</td>
+							<td>{{user.userRole}}
+								</p>
+							</td>
+							<td><a class="view-record span-link"
+								ui-sref="app.viewRecord({id:'U-'+user.id})">View </a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

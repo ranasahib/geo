@@ -1,0 +1,43 @@
+<div id="container" class="main-content content horizontal scroll-y">
+	<div id="map" class="tab-pane" style="overflow: auto;">
+		<div style="float: left; float: left; width: 240px">
+			<a ui-sref="app.simpleQuery" class="btn btn-primary btn-lg btn-block" style="border-radius:0:pading:2 px">Back</a>
+			<form class="panel panel-default login-wrapper center-block"
+				name="registerForm">
+				<div class="panel-body">
+					<div class="form-group">
+						<label>Enter Latitude</label> <input id="point_lat" type="text"
+							class="form-control" name="resourceURL" ng-model="filter.lat"
+							required>
+					</div>
+					<div class="form-group">
+						<label>Enter Longitude</label> <input id="point_long" type="text"
+							class="form-control" name="resourceURL" ng-model="filter.long"
+							required>
+					</div>
+					<div class="form-group">
+						<label>Enter Radius In KM</label> <input id="point_radius"
+							type="text" class="form-control" name="resourceURL"
+							ng-model="filter.radius" required>
+					</div>
+					<div class="form-group">
+						<div class="col-md-12">
+							<button type="submit" class="btn btn-primary"
+								ng-click="MapData(filter)">Search</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div style="margin-left: 240px">
+		   <div id="mapid" ></div>
+		   <div id="position" class="well"></div>
+		</div>
+		<div id="popup" class="ol-popup">
+			<a href="#" id="popup-closer" class="ol-popup-closer"></a>
+			<div id="popup-content" style="background: white"></div>
+		</div>
+		<!-- <div id="info" class="map-right col-md-12"></div> -->
+	</div>
+	
+</div>

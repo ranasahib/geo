@@ -1,0 +1,91 @@
+<div id="container">
+	<div id="record" class="well">
+		<h4>
+			<span class="name">List Organization</span> <small class="type"></small>
+		</h4>
+	</div>
+
+    <div ng-if="organisations.length == 0">
+    <div id="record" class="well">
+		<h4>
+			<span class="name">No record</span> <small class="type"></small>
+		</h4>
+	</div>
+    </div>
+
+	<ul class="list-group ">
+		<li class="list-group-item ng-scope"
+			ng-repeat="organisation in organisations">
+			<div class="panel">
+				<div class="panel-heading ng-binding">
+					<b>Organisation : {{organisation.name}}</b><br>
+				</div>
+				<div class="panel-body">
+					<table id="results-table"
+						class="table-view table table-striped table-bordered dataTable no-footer"
+						aria-describedby="results-table_info" role="grid">
+						<thead>
+							<tr role="row">
+								<th style="width: 15%;">Login ID</th>
+								<th style="width: 20%;">Name</th>
+								<th style="width: 20%;">Email</th>
+								<th style="width: 15%;">Mobile Number</th>
+								<th style="width: 20%;">User Role</th>
+							</tr>
+						</thead>
+						<tbody class="results">
+							<tr class="odd">
+								<td>{{organisation.admin.loginName}}</td>
+								<td>{{organisation.admin.firstName}}
+									{{organisation.admin.middleName}}
+									{{organisation.admin.lastName}}</td>
+								<td>{{organisation.admin.emailAddress}}
+									</p>
+								</td>
+								<td>{{organisation.admin.mobileNumber}}</td>
+								<td>{{organisation.admin.userRole}}
+									</p>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+
+				<div class="panel-body">
+					<table id="results-table"
+						class="table-view table table-striped table-bordered dataTable no-footer"
+						aria-describedby="results-table_info" role="grid">
+						<thead>
+							<tr role="row">
+								<th style="width: 15%;">Login ID</th>
+								<th style="width: 20%;">Name</th>
+								<th style="width: 20%;">Email</th>
+								<th style="width: 15%;">Mobile Number</th>
+								<th style="width: 20%;">User Role</th>
+							</tr>
+						</thead>
+						<tbody class="results">
+							<tr class="odd">
+								<td>{{organisation.nodalOfficer.loginName}}</td>
+								<td>{{organisation.nodalOfficer.firstName}}
+									{{organisation.nodalOfficer.middleName}}
+									{{organisation.nodalOfficer.lastName}}</td>
+								<td>{{organisation.nodalOfficer.emailAddress}}
+									</p>
+								</td>
+								<td>{{organisation.nodalOfficer.mobileNumber}}</td>
+								<td>{{organisation.nodalOfficer.userRole}}
+									</p>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<button ng-if="organisation.userRegistered > 1"
+					class="btn btn-primary pull-right" style="margin-right: 10px;" ng-click="approve(organisation.id)">Approve</button>
+				<div style="clear: both"></div>
+			</div>
+		</li>
+	</ul>
+</div>

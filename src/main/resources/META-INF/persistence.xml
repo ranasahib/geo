@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="geoportal">
+	   <class>com.rd.domain.Address</class>
+	   <class>com.rd.domain.Classfication</class>
+	   <class>com.rd.domain.EmailAddress</class>
+	   <class>com.rd.domain.EmailVerification</class>
+	   <class>com.rd.domain.Harvest</class>
+	   <class>com.rd.domain.IdentityProof</class>
+	   <class>com.rd.domain.Layer</class>
+	   <class>com.rd.domain.LayerProperty</class>
+	   <class>com.rd.domain.Organisation</class>
+	   <class>com.rd.domain.PhoneNumber</class>
+	   <class>com.rd.domain.RoleMenu</class>
+	   <class>com.rd.domain.User</class>
+	   <class>com.rd.domain.UserRole</class>
+	   <class>com.rd.domain.AuditLog</class>
+	   	   	</persistence-unit>
+</persistence>

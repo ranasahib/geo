@@ -1,0 +1,144 @@
+<div id="container" class="main-content content horizontal scroll-y">
+	<div id="query-builder-container" class="content horizontal scroll-y">
+		<ul class="nav nav-tabs">
+			<li class="active"><a data-target="#query-builder"
+				data-toggle="tab"><span class="glyphicon glyphicon-th-list"></span>
+					Query Builder</a></li>
+
+		</ul>
+		<div class="tab-content" style="margin-top: 10px; padding: 5px;">
+			<div id="query-builder" class="query-builder-full tab-pane active">
+
+				<button class="query btn btn-primary btn-sm">
+					<span class="glyphicon glyphicon-search"></span> Execute Query
+				</button>
+
+				<div class="operator-display"></div>
+				<div class="query-builder-body group well">
+					<div class="filter-container">
+						<div class="operator-container">
+							<div class="operators">
+								<label class="form-inline">Match <select
+									class="operator form-control input-sm">
+										<option value="AND">all</option>
+										<option value="OR">one or more</option>
+								</select> of the following conditions:
+								</label>
+							</div>
+						</div>
+						<div class="button-container">
+							<div class="buttons">
+								<button class="add-condition btn btn-success btn-sm">
+									<span class="glyphicon glyphicon-plus-sign"></span> Add
+									Condition
+								</button>
+								<button class="add-group btn btn-success btn-sm">
+									<span class="glyphicon glyphicon-plus-sign"></span> Add Group
+								</button>
+								<button class="clear-all btn btn-danger btn-sm top-level">
+									<span class="glyphicon glyphicon-minus-sign"></span> Remove
+								</button>
+							</div>
+						</div>
+						<div class="filters">
+							<div class="form-inline filter">
+								<div class="operator-display"></div>
+								<button class="remove-filter btn btn-danger btn-sm">
+									<span class="glyphicon glyphicon-minus-sign"></span>
+								</button>
+								<select class="filter-options form-control input-sm"><option
+										value="Contains">Contains</option>
+									<option value="Classified As">Classified As</option>
+									<option value="Classified Under">Classified Under</option>
+									<option value="Inside">Inside</option></select><span
+									class="input-container"><input type="text"
+									class="value form-control input-sm" /></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="maps-container">
+	<div id="map-modal" class="modal fade" tabindex="-1" aria-hidden="true"
+		style="display: none;">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button class="close" data-dismiss="modal">
+						<span aria-hidden="true">X</span><span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title inline">Spatial Constraint</h4>
+				</div>
+				<div class="map-body">
+					<div class="map" id="bbox"
+						style="width: 650px; height: 400px; overflow: hidden; position: relative;">
+					</div>
+				</div>
+				<div class="modal-footer">
+					<div class="pull-right">
+						<button class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
+						<button class="btn btn-primary btn-sm" data-dismiss="modal"
+							name="save-coords">Save</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/html" id="groupContainer">
+<div class="operator-display" data-content="operator" >
+		</div>
+	<div class="form-inline filter group white-bg">
+		<div class="filter-container">
+			<div class="operator-container">
+				<div class="operators">
+					<label class="form-inline">Match <select
+						class="operator form-control input-sm"><option
+								value="AND">all</option>
+							<option value="OR">one or more</option></select> of the following
+						conditions:
+					</label>
+				</div>
+			</div>
+			<div class="button-container">
+				<div class="buttons">
+					<button class="add-condition btn btn-success btn-sm">
+						<span class="glyphicon glyphicon-plus-sign"></span> Add Condition
+					</button>
+					<button class="add-group btn btn-success btn-sm">
+						<span class="glyphicon glyphicon-plus-sign"></span> Add Group
+					</button>
+					<button class="clear-all btn btn-danger btn-sm">
+						<span class="glyphicon glyphicon-minus-sign"></span> Remove
+					</button>
+				</div>
+			</div>
+			<div class="filters"></div>
+		</div>
+	</div>
+	</script>
+
+<script type="text/html" id="conditionContainer">
+	
+		<div class="operator-display" data-content="operator">
+		</div>
+		<button class="remove-filter btn btn-danger btn-sm">
+			<span class="glyphicon glyphicon-minus-sign"></span>
+		</button>
+		<select class="filter-options form-control input-sm"><option
+				value="Contains">Contains</option>
+			<option value="Classified As">Classified As</option>
+			<option value="Classified Under">Classified Under</option>
+			<option value="Inside">Inside</option></select><span class="input-container"><input
+			type="text" class="value form-control input-sm"/></span>
+	
+	</script>
+<!-- Galdos scripts -->
+<script type="text/javascript" src="js/galdos.common.js"></script>
+<script type="text/javascript" src="js/galdos.registry.js"></script>
+<!-- Client scripts -->
+<script type="text/javascript" src="js/client.tree.js"></script>
+<script type="text/javascript" src="js/client.query.builder.js"></script>

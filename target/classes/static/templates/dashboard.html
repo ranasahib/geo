@@ -1,0 +1,32 @@
+<div class="page-title">Dashboard</div>
+<div id="container">
+    <div id="dashboard" class="content horizontal">
+        <div class="left vertical">
+            <div class="anchor-container">
+                <button target="object-types-panel" class="anchor btn btn-default btn-sm btn-block"><span class="pull-left">Registry Object Counts</span> <span class="glyphicon glyphicon-chevron-right pull-right"></span></button>
+                <button target="tree-map-panel" class="anchor btn btn-default btn-sm btn-block"><span class="pull-left">Classification Schemes</span> <span class="glyphicon glyphicon-chevron-right pull-right"></span></button>
+            </div>
+        </div>
+        <div class="right vertical scroll-y">
+            <div id="object-types-panel" class="panel panel-default">
+                <div class="panel-heading">Registry Objects Count</div>
+                <div class="panel-body">
+                    <div class="well">
+                        <span>Hover a slice on the pie, or an entry in the legend, to show the instance count and a link to view all instances.</span>
+                    </div>
+                    <div>Total number of registry objects: <span id="totalCount" class="bold"></span></div>
+                    <div id="chart"></div>
+                </div>
+            </div>
+            <div id="tree-map-panel" class="panel panel-default">
+                <div class="panel-heading">Registry Classification Schemes Tree Map</div>
+                <div class="panel-body">
+                    <div class="well">
+                        <span>In order to navigate the tree map, left-click to go down the tree and right-click to go up.<br>Note that larger-sized tree nodes contain more descendant nodes, while darker-coloured nodes contain more immediate child nodes.</span>
+                    </div>
+                    <div id="treemap"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<div class="page-title">Settings</div>
+<div id="container">
+    <div id="settings-panel" class="panel panel-default">
+        <div class="panel-heading">Settings</div>
+        <div class="panel-body">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-3">Change Active Registry</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="active-registry-url" class="form-control input-sm">
+                    </div>
+                </div>
+            </div>
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-3">Default Language</label>
+                    <div class="col-sm-9">
+                        <select class="language-select form-control input-sm"></select>
+                        <div class="backup-lang hide">
+                            <input type="checkbox" class="default-backup-lang" checked="checked">
+                            <span>Show <span class="bold">EN</span> content if <span class="bold selected-lang"></span> is not available</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-3">Cache</label>
+                    <div class="col-sm-9">
+                        <div class="checkbox"><label><input type="checkbox" class="clear-queries">Clear Cached Queries</label></div>
+                        <div class="checkbox"><label><input type="checkbox" class="clear-records">Clear Cached Records (Recently Viewed Records)</label></div>
+                        <div class="checkbox"><label><input type="checkbox" class="clear-urls">Clear Cached Registry URLs</label></div>
+                        <div class="checkbox"><label><input type="checkbox" class="clear-local-queries">Clear Saved Local Queries</label></div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-3"></label>
+                    <div class="col-sm-9">
+                        <button id="save-settings" class="btn btn-primary btn-sm pull-right">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

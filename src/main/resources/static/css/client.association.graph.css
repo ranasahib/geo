@@ -1,0 +1,89 @@
+.node {
+    cursor: pointer;
+}
+
+.node circle {
+    fill: #fff;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+}
+
+.node text {
+    font: 10px sans-serif;
+}
+
+.link {
+    fill: none;
+    stroke: #999;
+    stroke-width: 1.5px;
+}
+
+.link-red {
+    fill: none;
+    stroke: red;
+    stroke-width: 1.5px;
+}
+
+.link-green {
+    fill: none;
+    stroke: green;
+    stroke-width: 1.5px;
+}
+
+.link-none {
+    fill: none;
+    stroke: none;
+    stroke-width: 0;
+}
+
+.tooltip-table td:first-child {
+    width: 100px;
+    font-weight: bold;
+}
+
+.tooltip-table tr {
+    padding-bottom: 10px;
+}
+
+/* SVG styles */
+path.link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 2px;
+}
+
+circle.node {
+    fill: #ccc;
+    stroke: #fff;
+    stroke-width: 1.5px;
+}
+
+circle.node:hover {
+    fill: #000;
+    stroke: #fff;
+    stroke-width: 1.5px;
+}
+
+text {
+    fill: #000;
+    font: 10px sans-serif;
+    /*pointer-events: none;*/
+}
+
+.text-white {
+    fill: #fff;
+    font-weight: bold;
+}
+
+.text-blue {
+    fill: #336699;
+    font-weight: bold;
+}
+
+.shadow {
+    stroke: white;
+    stroke-width: 2.5px;
+    opacity: 0.9;
+    font: 10px sans-serif;
+    pointer-events: none;
+}

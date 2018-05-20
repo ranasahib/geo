@@ -1,0 +1,43 @@
+<div id="container" class="main-content content horizontal scroll-y">
+	<div class="content horizontal">
+		<div class="right vertical scroll-y">
+			<div id="record" class="well">
+				<h4>
+					<span class="name">User List</span> <small class="type"></small>
+				</h4>
+			</div>
+			<div class="view">
+				<table id="results-table"
+					class="table-view table table-striped table-bordered dataTable no-footer"
+					aria-describedby="results-table_info" role="grid">
+					<thead>
+						<tr role="row">
+							<th style="width: 15%;">Login ID</th>
+							<th style="width: 20%;">Name</th>
+							<th style="width: 20%;">Email</th>
+							<th style="width: 15%;">Mobile Number</th>
+							<th style="width: 20%;">User Role</th>
+							<th style="width: 10%;">Actions</th>
+						</tr>
+					</thead>
+					<tbody class="results">
+						<tr class="odd" ng-repeat="user in approveUsers">
+							<td>{{user.loginName}}</td>
+							<td>{{user.firstName}} {{user.middleName}} {{user.lastName}}</td>
+							<td>{{user.emailAddress}}
+								</p>
+							</td>
+							<td>{{user.mobileNumber}}</td>
+							<td>{{user.userRole}}
+								</p>
+							</td>
+							<td>
+								<a ng-click="approveUser(user,$index)"  style="cursor: pointer;" >Approve </a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
